@@ -1,0 +1,31 @@
+<%= render "shared/second_header" %>
+<%= form_with model: @post, url: posts_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        投稿
+      </h1>
+    </div>
+    <div class="form-group">
+      <div class="img-select cursor-poimter" onClick="$('#upfile').click()">
+        <a class="img-select-text">画像を選択</a>
+        <%= image_tag 'upload_icon.png',class:"img-select-icon" %>
+      </div>
+      <div class="image-list"id="image-list"></div>
+      <%= f.file_field :image, style:"display:none;", id:"upfile" %>
+      <% if @post.errors.include?(:image) %>
+        <p style="color: red;"><%= @post.errors.full_messages_for(:image).first %></p>
+      <% end %>
+    </div>
+    <div class="form-group">
+      <%= f.text_area :memo, class:"memo-text-area", id:"memo", placeholder:"ひとこと" %>
+    </div>
+    <div class="form-group">
+      <h2 class='form-bottom-text'>
+      </h2>
+    </div>
+    <div class='register-btn'>
+      <%= f.submit "アップロード", id:"img-submit", class:"post-bk-btn" %>
+    </div>
+  </div>
+<% end %>

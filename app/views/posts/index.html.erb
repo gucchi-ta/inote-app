@@ -1,2 +1,24 @@
-<h1>Post#index</h1>
-<p>Find me in app/views/post/index.html.erb</p>
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画像一覧 %>
+  <div class='post-contents'>
+    <ul class='post-lists'>
+      <%# 画像一覧 %>
+      <%= render "shared/index", posts: @posts %>
+      <%# /画像一覧 %>
+      <%# 画像がない場合のダミー %>
+      <% if @posts.where('id >= 1').blank? %>
+        <li class='list'>
+          <div class='post-img-content'>
+            <%= link_to new_post_path do %>
+              <%= image_tag "white_image.jpg", class: "post-img" %>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+      <%# //画像がない場合のダミー %>
+    </ul>
+  </div>
+  <%# //画像一覧 %>
+</div>

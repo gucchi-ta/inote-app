@@ -1,0 +1,50 @@
+.post-bk-btn {
+  width: 100%;
+  background: #3e3a39;
+  border: 1px solid #3e3a39;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.memo-text-area{
+  margin-top: 5px;
+  height: 100px;
+  padding: 10px 16px 8px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.img-select{
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.img-select-icon{
+  height: 40px;
+}
+
+.img-select-text{
+  /* margin-left: 10px; */
+  margin-right: 20px;
+  color: #3e3a39;
+  padding-top: 13px;
+}
+
+.image-list{
+  margin-top: 15px;
+}
+
+/* フォームにフォーカスした際に青い囲み */
+.memo-text-area:focus{
+  outline: 0;
+  box-shadow: none;
+  border: 2px solid #0099e8;
+}
+/* /フォームにフォーカスした際に青い囲み */

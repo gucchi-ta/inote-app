@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    memo    { Faker::Name.initials }
+    memo    { Faker::Lorem.sentence }
     user    # userとのアソシエーション
   end
 end

@@ -25,7 +25,7 @@
     <% if @user.errors.include?(:password) %>
       <p style="color: red;"><%= @user.errors.full_messages_for(:password).first %>
     <% end %>
-    <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"パスワード(確認)" %>
+    <%= f.password_field :password_confirmation, class:"input-default", id:"password_confirmation", placeholder:"パスワード(確認)" %>
     <% if @user.errors.include?(:password_confirmation) %>
       <p style="color: red;"><%= @user.errors.full_messages_for(:password_confirmation).first %>
     <% end %>
@@ -36,7 +36,7 @@
                   f.date_select(
                     :birthday,
                     class:'select-birth',
-                    id:"birth-date",
+                    id:"birthday",
                     use_month_numbers: true,
                     prompt:'--',
                     start_year: 1930,

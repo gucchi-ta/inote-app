@@ -18,10 +18,10 @@
       <%# ログインの有無で表示切り替え%>
       <% if user_signed_in? %>
         <li id="user_nickname_box"><%= link_to current_user.nickname, "#", class: "user-nickname", id: "user-nickname" %></li>
-        <li><%= link_to image_tag('logout_icon.png', class: "devise_icon"), destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to image_tag('logout_icon.png', class: "devise_icon", id: "logout_icon"), destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
-        <li><%= link_to image_tag('login_icon.png', class: "devise_icon"), user_session_path, class: "login" %></li>
-        <li><%= link_to image_tag('signup_icon.png', class: "devise_icon"), new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to image_tag('login_icon.png', class: "devise_icon", id: "login_icon"), user_session_path, class: "login" %></li>
+        <li><%= link_to image_tag('signup_icon.png', class: "devise_icon", id: "signup_icon"), new_user_registration_path, class: "sign-up" %></li>
       <%# //ログインの有無で表示切り替え%>
       <% end %>
     </ul>

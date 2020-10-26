@@ -40,22 +40,28 @@
 }
 
 .post-lists>li{
-  width: 19%;
+  width: 15.66%;
   margin: 0.5%;
   border-radius: 15px;
   background-color: #3e3a39;
 }
 
-.index-img-content{
+.post-img-content{
   position: relative;
 }
 
-.index-img{
+.show-index-img{
   width: 100%;
   border-radius: 15px;
+  z-index: 0.5;
 }
 
-.index-img:hover{
+.show-index-img:hover{
+  opacity: 0.9;
+}
+
+.post-img-content:hover .index-memo{
+  display: block;
   opacity: 0.9;
 }
 
@@ -64,10 +70,45 @@
   position: absolute;
   bottom: 5px;
   right: 10px;
+  display: none;
+  font-size: 12px;
 }
 
-.index-memo:hover{
-  opacity: 0.9;
+.lightbox-show{
+  height: 70vh;
 }
+
+#lightbox .lb-container { 
+  padding: 1px; 
+}
+
+.index-arrow{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  z-index: 1;
+  padding: 5px 10px;
+}
+
+.index-arrow:hover .more_list{
+   display: block;
+   opacity: 0.9;
+}
+
+.more_list{
+  position: absolute;
+  top: 25px;
+  right: 5px;
+  width: 35px;
+  display: none;
+}
+
+.list-bun{
+  color: #f3f3f3;
+  /* text-decoration: none; */
+  
+}
+
+
 
 /* /画像一覧 */

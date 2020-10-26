@@ -10,7 +10,7 @@
       <%# 画像がない場合のダミー %>
       <% if @posts.where('id >= 1').blank? %>
         <li class='list'>
-          <div class='index-img-content'>
+          <div class='post-img-content'>
             <%= link_to new_post_path do %>
               <%= image_tag "white_image.jpg", class: "show-img" %>
             <% end %>

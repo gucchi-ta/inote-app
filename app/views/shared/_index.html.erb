@@ -1,11 +1,31 @@
 <% posts.each do |post| %>
   <li class='list'>
-    <div class='index-img-content'>
+    <div class='post-img-content'>
       <%# data-lightbox %>
-      <%= link_to post.image, "data-lightbox": post.image do %>
-        <%= image_tag post.image, class: "index-img" %>
-        <div class="index-memo"><%= post.memo %></div>
+      <%#= link_to post.image, "data-lightbox": post.image do %>
+      <%= link_to post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
+        <div>
+          <%= image_tag post.image, class: "show-index-img" %>
+        </div>
       <% end %>
+      <div class="index-memo">
+        <%= post.memo %>
+      </div>
+      <div class="index-arrow">
+        <span>
+          <%= image_tag 'arrow_top.png' %>
+        </span>
+        <ul class="more_list">
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(post.id), class: "list-bun text-light", method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(post.id), class: "list-bun text-light", method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
       <%# //data-lightbox %>
     </div>
   </li>

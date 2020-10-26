@@ -1,5 +1,5 @@
 <%= render "shared/second_header" %>
-<%= form_with model: @post, url: posts_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @post, url: post_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
       <h1 class='form-header-text'>
@@ -19,6 +19,10 @@
     </div>
     <div class="form-group">
       <%= f.text_area :memo, class:"memo-text-area", id:"memo", placeholder:"ひとこと" %>
+    </div>
+    <div class="form-group">
+      <h2 class='form-bottom-text'>
+      </h2>
     </div>
     <div class='register-btn'>
       <%= f.submit "アップロード", id:"img-submit", class:"post-bk-btn" %>

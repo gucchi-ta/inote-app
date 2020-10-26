@@ -92,20 +92,25 @@
 
 .index-arrow:hover .more_list{
    display: block;
-   opacity: 0.9;
+   /* opacity: 0.9; */
 }
 
 .more_list{
   position: absolute;
   top: 25px;
   right: 5px;
-  width: 35px;
+  width: 38px;
   display: none;
+  border-radius: 2px;
+  /* background-color: white; */
+  background-color:  #3e3a39;
+  padding: 2px 7px;
 }
 
 .list-bun{
-  color: #f3f3f3;
+  color: #3e3a39;
   /* text-decoration: none; */
+  font-size: 12px;
   
 }
 

@@ -90,3 +90,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+# amazon S3を使うため
+gem "aws-sdk-s3", require: false

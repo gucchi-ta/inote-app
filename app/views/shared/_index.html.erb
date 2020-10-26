@@ -1,11 +1,14 @@
 <% posts.each do |post| %>
   <li class='list'>
-    <div class='post-img-content'>
-      <%#= link_to post_path(post.id) do %>
-      <%= link_to "#" do %>
-        <%= image_tag post.image, class: "post-img" %>
+    <div class='index-img-content'>
+      <%# data-lightbox %>
+      <%= link_to post.image, "data-lightbox": post.image do %>
+        <%= image_tag post.image, class: "index-img" %>
+        <div class="index-memo"><%= post.memo %></div>
       <% end %>
+      <%# //data-lightbox %>
     </div>
+  </li>
   </li>
 <% end %>
 

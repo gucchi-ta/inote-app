@@ -79,25 +79,29 @@
 .index-arrow{
   position: absolute;
   top: 5px;
-  right: 10px;
+  right: 5px;
   z-index: 1;
   padding: 15px 20px;
 }
 
-.index-arrow:hover .more_list{
+/* .index-arrow:hover .more_list{
    display: block;
-   /* opacity: 0.9; */
+} */
+
+.post-img-content:hover .index-arrow .more_list{
+  display: block;
 }
 
 .more_list{
   position: absolute;
-  top: 25px;
+  top: 5px;
   right: 5px;
-  width: 42px;
+  width: 38px;
   display: none;
-  border-radius: 2px;
+  border-radius: 4px;
   /* background-color: white; */
-  background-color:  #3e3a39;
+  /* background-color:  #3e3a39; */
+  background-color:  black;
   padding: 4px 7px;
 }
 
@@ -106,6 +110,17 @@
   /* text-decoration: none; */
   font-size: 14px;
   
+}
+
+.edit-icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 1px;
+}
+
+.delete-icon{
+  width: 20px;
+  height: 20px;
 }
 
 /* //編集/削除ボタン */

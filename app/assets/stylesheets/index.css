@@ -1,19 +1,3 @@
-/* モーダルの背景 */
-
-/* .sign_modal_wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #3e3a39;
-  opacity: .7;
-  display: none;
-} */
-
-/* /モーダルの背景 */
-
-
 /* メイン全体 */
 
 .main{
@@ -25,7 +9,7 @@
   cursor: pointer;
 }
 
-/* /メイン全体 */
+/* //メイン全体 */
 
 
 /* 画像一覧 */
@@ -74,6 +58,11 @@
   font-size: 12px;
 }
 
+/* //画像一覧 */
+
+
+/* 詳細表示 */
+
 .lightbox-show{
   height: 70vh;
 }
@@ -82,12 +71,17 @@
   padding: 1px; 
 }
 
+/* /詳細表示 */
+
+
+/* 編集/削除ボタン */
+
 .index-arrow{
   position: absolute;
   top: 5px;
   right: 10px;
   z-index: 1;
-  padding: 5px 10px;
+  padding: 15px 20px;
 }
 
 .index-arrow:hover .more_list{
@@ -99,21 +93,38 @@
   position: absolute;
   top: 25px;
   right: 5px;
-  width: 38px;
+  width: 42px;
   display: none;
   border-radius: 2px;
   /* background-color: white; */
   background-color:  #3e3a39;
-  padding: 2px 7px;
+  padding: 4px 7px;
 }
 
-.list-bun{
+.list-btn{
   color: #3e3a39;
   /* text-decoration: none; */
-  font-size: 12px;
+  font-size: 14px;
   
 }
 
+/* //編集/削除ボタン */
 
 
-/* /画像一覧 */
+/* ダミー */
+
+.dummy-contents{
+  flex-direction: column;
+  margin-top: 80px;
+  display: inline-block;
+}
+.dummy-text{
+  font-size: 25px;
+  font-family: "游教科書体 横用";
+  text-align: center;
+}
+
+.dummy-info-text{
+  text-align: center;
+}
+/* //ダミー */

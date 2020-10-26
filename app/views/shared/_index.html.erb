@@ -18,10 +18,10 @@
         <ul class="more_list">
           <% if user_signed_in? && current_user.id == post.user_id %>
             <li>
-              <%= link_to '編集', edit_post_path(post.id), class: "list-bun text-light", method: :get %>
+              <%= link_to '編集', edit_post_path(post.id), class: "list-btn text-light", method: :get %>
             </li>
             <li>
-              <%= link_to '削除', post_path(post.id), class: "list-bun text-light", method: :delete %>
+              <%= link_to '削除', post_path(post.id), class: "list-btn text-light", method: :delete %>
             </li>
           <% end %>
         </ul>

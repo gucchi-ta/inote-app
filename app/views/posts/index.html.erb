@@ -1,24 +1,44 @@
 <%= render "shared/header" %>
 <div class='main'>
+  <% if user_signed_in? %>
+    <%# 画像一覧 %>
+    <div class='post-contents'>
+      <ul class='post-lists'>
+        <%# 画像一覧 %>
+        <%= render "shared/index", posts: @posts %>
+        <%# /画像一覧 %>
+      </ul>
+    </div>
+    <%# 画像がない場合のダミー %>
+    <% if @posts.where('id >= 1').blank? %>
+      <P class="dummy-contents">
+        <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
+        <p class='info-text dummy-info-text'>※ ご利用になる方は画面右上より画像をアップロードして下さい。</p>
+      </p>
 
-  <%# 画像一覧 %>
-  <div class='post-contents'>
-    <ul class='post-lists'>
-      <%# 画像一覧 %>
-      <%= render "shared/index", posts: @posts %>
-      <%# /画像一覧 %>
-      <%# 画像がない場合のダミー %>
-      <% if @posts.where('id >= 1').blank? %>
-        <li class='list'>
-          <div class='post-img-content'>
-            <%= link_to new_post_path do %>
-              <%= image_tag "white_image.jpg", class: "show-img" %>
-            <% end %>
-          </div>
-        </li>
-      <% end %>
-      <%# //画像がない場合のダミー %>
-    </ul>
-  </div>
-  <%# //画像一覧 %>
+      <%# <div class='post-contents dummy-contents'>
+        <ul class='post-lists'> %>
+
+          <%# 6.times do%>
+
+            <%# <li class='list'>
+              <div class='post-img-content'>
+                <img src="/assets/black-img.jpeg" class= "show-index-img">
+              </div>
+            </li> %>
+
+          <%# end %>
+
+        <%# </ul>
+      </div> %>
+      
+    <% end %>
+        <%# //画像がない場合のダミー %>
+    <%# //画像一覧 %>
+  <% else %>
+    <P class="dummy-contents">
+      <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
+      <p class='info-text dummy-info-text'>※ ご利用になる方は画面右上よりログインしてください。</p>
+    </p>
+  <% end %>
 </div>

@@ -31,7 +31,8 @@
 
 .everyone-post-link{
   font-size: 15px;
-  width: 138px;
+  /* width: 138px; */
+  width: 126px;
   margin-right: 1vw;
   padding: 15px;
   border-radius: 50px;

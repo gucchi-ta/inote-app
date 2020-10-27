@@ -24,13 +24,19 @@
               <% if post.hert == true %>
                 <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
                 <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
-              <% else %>
+              <% elsif post.hert == false %>
                 <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
                 <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to image_tag("lock-icon.png",class: "lock-icon"), "#" %>
+            <li class="grobal-icon-box" data-grobal-id=<%= post.id %> data-grobal-check=<%= post.grobal %>>
+              <% if post.grobal == true %>
+                <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
+                <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
+              <% elsif post.grobal == false %>
+                <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
+                <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
+              <% end %>
             </li>
           <% end %>
         </ul>

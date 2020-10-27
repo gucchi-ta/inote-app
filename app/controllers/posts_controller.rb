@@ -63,6 +63,19 @@ class PostsController < ApplicationController
     render json: { post: item }
   end
 
+  def grobal
+    # binding.pry
+    post = Post.find(params[:id])
+    if post.grobal
+      post.update(grobal: false)
+    else
+      post.update(grobal: true)
+    end
+
+    item = Post.find(params[:id])
+    render json: { post: item }
+  end
+
   private
 
   def move_to_index

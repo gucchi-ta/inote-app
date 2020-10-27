@@ -1,11 +1,43 @@
 <% posts.each do |post| %>
   <li class='list'>
     <div class='post-img-content'>
-      <%#= link_to post_path(post.id) do %>
-      <%= link_to "#" do %>
-        <%= image_tag post.image, class: "post-img" %>
+      <%# data-lightbox %>
+      <%#= link_to post.image, "data-lightbox": post.image do %>
+      <%= link_to post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
+        <div>
+          <%= image_tag post.image, class: "show-index-img" %>
+        </div>
       <% end %>
+      <div class="index-memo">
+        <%= post.memo %>
+      </div>
+      <div class="index-arrow">
+        <ul class="more_list">
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to image_tag("edit-icon.png",class: "edit-icon"), edit_post_path(post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to image_tag("delete-icon.png",class: "delete-icon"), post_path(post.id), method: :delete %>
+            </li>
+            <li class="hert-icon-box" data-hert-id=<%= post.id %> data-hert-check=<%= post.hert %>>
+              <% if post.hert == true %>
+                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
+                <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
+              <% else %>
+                <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
+                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to image_tag("lock-icon.png",class: "lock-icon"), "#" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <%# //data-lightbox %>
     </div>
+  </li>
   </li>
 <% end %>
 

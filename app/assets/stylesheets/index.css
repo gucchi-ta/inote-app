@@ -1,64 +1,191 @@
-/* モーダルの背景 */
-
-.sign_modal_wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: #3e3a39;
-  opacity: .7;
-  display: none;
-}
-
-/* /モーダルの背景 */
-
-
 /* メイン全体 */
 
 .main{
   margin-top: 80px;
   padding: 0 3vw;
-  /* position: relative; */
 }
 
-/* .post-contents{
-  margin-top: 80px;
-} */
-
-.cursor-poimter{
-  cursor: pointer;
-}
-
-/* /メイン全体 */
+/* //メイン全体 */
 
 
 /* 画像一覧 */
 
 .post-lists{
   display: flex;
-  /* justify-content: center; */
   width: 94vw;
   flex-wrap: wrap;
-  /* flex-direction: column; */
-  align-items: baseline;
-  /* column-count: 5; */
+  /* align-items: baseline; */
+  align-items: flex-end;
 }
 
 .post-lists>li{
-  width: 19%;
+  width: 15.66%;
   margin: 0.5%;
   border-radius: 15px;
   background-color: #3e3a39;
+  /* float: left; */
 }
 
-.post-img{
+.post-lists:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.post-img-content{
+  position: relative;
+}
+
+.show-index-img{
   width: 100%;
   border-radius: 15px;
+  z-index: 0.5;
 }
 
-.post-img:hover{
+.show-index-img:hover{
   opacity: 0.9;
 }
 
-/* /画像一覧 */
+.post-img-content:hover .index-memo{
+  display: block;
+  opacity: 0.9;
+}
+
+.index-memo{
+  color: #f3f3f3;
+  position: absolute;
+  bottom: -12px;
+  right: 10px;
+  display: none;
+  font-size: 12px;
+  word-wrap: break-word;
+  width: 90%;
+  text-align: right;
+  white-space: pre-wrap;
+  font-family: "游教科書体 横用";
+}
+
+/* //画像一覧 */
+
+
+/* 詳細表示 */
+
+.lightbox-show{
+  height: 70vh;
+}
+
+#lightbox .lb-container { 
+  padding: 0; 
+}
+
+/* /詳細表示 */
+
+
+/* 編集/削除ボタン */
+
+.index-arrow{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  padding: 15px 20px;
+}
+
+/* .index-arrow:hover .more_list{
+   display: block;
+} */
+
+.post-img-content:hover .index-arrow .more_list{
+  display: block;
+}
+
+.more_list{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 38px;
+  display: none;
+  border-radius: 4px;
+  /* background-color: white; */
+  /* background-color:  #3e3a39; */
+  background-color:  black;
+  padding: 4px 7px;
+}
+
+.list-btn{
+  color: #3e3a39;
+  /* text-decoration: none; */
+  font-size: 14px;
+}
+
+.edit-icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 1px;
+}
+
+.delete-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.hert-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.lock-icon{
+  width: 20px;
+  height: 20px;
+}
+
+li[data-hert-check="true"] {
+}
+
+li[data-hert-check="true"] .hert-off-icon{
+  display: none;
+}
+
+li[data-hert-check="true"] .hert-on-icon{
+  display: inline;
+}
+
+li[data-hert-check="false"] .hert-on-icon{
+  display: none;
+}
+
+li[data-hert-check="false"] .hert-off-icon{
+  display: inline;
+}
+
+
+
+
+/* //編集/削除ボタン */
+
+
+/* ダミー */
+
+.dummy-contents{
+  flex-direction: column;
+  margin-top: 80px;
+  display: inline-block;
+}
+
+.dummy-text{
+  font-size: 25px;
+  font-family: "游教科書体 横用";
+  text-align: center;
+}
+
+.dummy-info-text{
+  text-align: center;
+}
+/* //ダミー */
+
+/* cursor */
+
+.cursor-pointer{
+  cursor: pointer;
+}
+/* //cursor */

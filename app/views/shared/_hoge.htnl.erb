@@ -1,0 +1,41 @@
+<%# "data-lightboxでの画像拡大ポップアップ"や"boostrapでのモーダル表示"をindex画面で %>
+
+<% posts.each do |post| %>
+  <li class='list'>
+    <div class='post-img-content'>
+
+      <%# 詳細表示画面へののリンク %>
+      <%= link_to post_path(post.id) do %>
+        <%= image_tag post.image, class: "index-img" %>
+      <% end %>
+      <%# //詳細表示画面へののリンク %>
+
+      <%# data-lightbox %>
+      <%= link_to post.image, "data-lightbox": post.image do %>
+        <%= image_tag post.image, class: "index-img" %>
+      <% end %>
+      <%# //data-lightbox %>
+
+      <%# boostrapでのモーダル表示(表示画像を指定できていない) %>
+      <div data-toggle="modal" data-target="#post">
+        <%= image_tag post.image, class: "index-img" %>
+      </div>
+        <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body post-show-window">
+                <%= image_tag post.image %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%# //boostrapでのモーダル表示 %>
+
+
+    </div>
+  </li>
+  </li>
+<% end %>
+
+<div class="sign_modal_wrapper"></div>

@@ -11,6 +11,7 @@
       <div class="index-memo">
         <%= post.memo %>
       </div>
+      <%# //data-lightbox %>
       <div class="index-arrow">
         <ul class="more_list">
           <% if user_signed_in? && current_user.id == post.user_id %>
@@ -20,28 +21,29 @@
             <li>
               <%= link_to image_tag("delete-icon.png",class: "delete-icon"), post_path(post.id), method: :delete %>
             </li>
+          <% end %>
+          <% if user_signed_in? %>
             <li class="hert-icon-box" data-hert-id=<%= post.id %> data-hert-check=<%= post.hert %>>
               <% if post.hert == true %>
-                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
+                <%= image_tag("hert-on-yellow-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
                 <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
               <% elsif post.hert == false %>
                 <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
-                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
-              <% end %>
-            </li>
-            <li class="grobal-icon-box" data-grobal-id=<%= post.id %> data-grobal-check=<%= post.grobal %>>
-              <% if post.grobal == true %>
-                <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
-                <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
-              <% elsif post.grobal == false %>
-                <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
-                <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
+                <%= image_tag("hert-on-yellow-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
               <% end %>
             </li>
           <% end %>
+          <li class="grobal-icon-box" data-grobal-id=<%= post.id %> data-grobal-check=<%= post.grobal %>>
+            <% if post.grobal == true %>
+              <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
+              <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
+            <% elsif post.grobal == false %>
+              <%= image_tag("grobal-off-icon.png",class: "grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
+              <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
+            <% end %>
+          </li>
         </ul>
       </div>
-      <%# //data-lightbox %>
     </div>
   </li>
   </li>

@@ -1,0 +1,20 @@
+<% everyone_posts.each do |everyone_post| %>
+  <li class='list'>
+    <div class='post-img-content'>
+      <%# data-lightbox %>
+      <%#= link_to post.image, "data-lightbox": post.image do %>
+      <%= link_to everyone_post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
+        <div>
+          <%= image_tag everyone_post.image, class: "show-index-img" %>
+        </div>
+      <% end %>
+      <div class="index-memo">
+        <%= everyone_post.memo %>
+      </div>
+      <%# //data-lightbox %>
+    </div>
+  </li>
+  </li>
+<% end %>
+
+<div class="sign_modal_wrapper"></div>

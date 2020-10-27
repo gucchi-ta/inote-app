@@ -1,0 +1,10 @@
+<%= render "shared/header" %>
+<div class='main'>
+  <div class='post-contents'>
+    <ul class='post-lists'>
+      <%# 画像一覧 %>
+        <%= render "shared/index", posts: @posts %>
+      <%# /画像一覧 %>
+    </ul>
+  </div>
+</div>

@@ -54,10 +54,15 @@
 .index-memo{
   color: #f3f3f3;
   position: absolute;
-  bottom: 5px;
+  bottom: -12px;
   right: 10px;
   display: none;
   font-size: 12px;
+  word-wrap: break-word;
+  width: 90%;
+  text-align: right;
+  white-space: pre-wrap;
+  font-family: "游教科書体 横用";
 }
 
 /* //画像一覧 */

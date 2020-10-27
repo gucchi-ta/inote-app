@@ -1,11 +1,11 @@
 function hert() {
   const herts = document.querySelectorAll(".hert-icon-box");
+  // 取得した要素それぞれに対して関数実行
   herts.forEach(function (aHert) {
     aHert.addEventListener("click", () => { 
       const hertId = aHert.getAttribute("data-hert-id");
-      console.log(hertId);
       const XHR = new XMLHttpRequest();
-      XHR.open("GET", `/posts/${hertId}`, true);
+      XHR.open("GET", `/posts/${hertId}/hert`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {

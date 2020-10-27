@@ -81,8 +81,14 @@ class PostsController < ApplicationController
     @everyone_posts = Post.where('grobal LIKE ?', "1").order('created_at DESC')
   end
 
-  def favorite
-    
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
+  def my_search
+    # binding.pry
+    post = Post.my_search(params[:keyword])
+    @posts = post.where('user_id LIKE ?', "%#{current_user.id}%")
   end
 
   private

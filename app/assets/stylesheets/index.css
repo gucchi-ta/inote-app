@@ -129,6 +129,38 @@
   height: 20px;
 }
 
+.hert-icon{
+  width: 20px;
+  height: 20px;
+}
+
+.lock-icon{
+  width: 20px;
+  height: 20px;
+}
+
+li[data-hert-check="true"] {
+}
+
+li[data-hert-check="true"] .hert-off-icon{
+  display: none;
+}
+
+li[data-hert-check="true"] .hert-on-icon{
+  display: inline;
+}
+
+li[data-hert-check="false"] .hert-on-icon{
+  display: none;
+}
+
+li[data-hert-check="false"] .hert-off-icon{
+  display: inline;
+}
+
+
+
+
 /* //編集/削除ボタン */
 
 

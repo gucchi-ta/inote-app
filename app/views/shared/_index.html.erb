@@ -15,12 +15,22 @@
         <ul class="more_list">
           <% if user_signed_in? && current_user.id == post.user_id %>
             <li>
-              <%#= link_to '編集', edit_post_path(post.id), class: "list-btn text-light", method: :get %>
               <%= link_to image_tag("edit-icon.png",class: "edit-icon"), edit_post_path(post.id), method: :get %>
             </li>
             <li>
-              <%#= link_to '削除', post_path(post.id), class: "list-btn text-light", method: :delete %>
               <%= link_to image_tag("delete-icon.png",class: "delete-icon"), post_path(post.id), method: :delete %>
+            </li>
+            <li class="hert-icon-box" data-hert-id=<%= post.id %> data-hert-check=<%= post.hert %>>
+              <% if post.hert == true %>
+                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
+                <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
+              <% else %>
+                <%= image_tag("hert-off-icon.png",class: "hert-icon hert-off-icon", id: "hert-off-icon") %>
+                <%= image_tag("hert-on-icon.png",class: "hert-icon hert-on-icon", id: "hert-on-icon") %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to image_tag("lock-icon.png",class: "lock-icon"), "#" %>
             </li>
           <% end %>
         </ul>

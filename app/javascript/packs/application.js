@@ -17,6 +17,7 @@ require("channels")
 require('../preview')
 // require('../show')
 require('../loading')
+require("../hert")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

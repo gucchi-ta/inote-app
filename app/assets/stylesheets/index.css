@@ -208,4 +208,8 @@ li[data-grobal-check="false"] .grobal-off-icon{
 .cursor-pointer{
   cursor: pointer;
 }
+
+.cursor-default{
+  cursor: default;
+}
 /* //cursor */

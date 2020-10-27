@@ -7,5 +7,13 @@ Rails.application.routes.draw do
       get 'hert'
       get 'grobal'
     end
+    collection do
+      get 'everyone'
+    end
+  end
+  resources :users, only: [:show] do
+    member do
+      get 'favorite'
+    end
   end
 end

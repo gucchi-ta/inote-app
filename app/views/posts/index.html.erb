@@ -1,4 +1,9 @@
-<%= render "shared/header" %>
+<% if user_signed_in? %>
+  <%= render "shared/header" %>
+<% else %>
+  <%= render "shared/everyone_header" %>
+<% end %>
+
 <div class='main'>
   <% if user_signed_in? %>
     <%# 画像一覧 %>
@@ -9,36 +14,28 @@
         <%# /画像一覧 %>
       </ul>
     </div>
-    <%# 画像がない場合のダミー %>
+    <%# 投稿画像がない場合のダミー %>
     <% if @posts.where('id >= 1').blank? %>
       <P class="dummy-contents">
         <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
         <p class='info-text dummy-info-text'>※ 画面右上より画像をアップロードして下さい。</p>
       </p>
-
-      <%# <div class='post-contents dummy-contents'>
-        <ul class='post-lists'> %>
-
-          <%# 6.times do%>
-
-            <%# <li class='list'>
-              <div class='post-img-content'>
-                <img src="/assets/black-img.jpeg" class= "show-index-img">
-              </div>
-            </li> %>
-
-          <%# end %>
-
-        <%# </ul>
-      </div> %>
-      
     <% end %>
-        <%# //画像がない場合のダミー %>
+    <%# //投稿画像がない場合のダミー %>
     <%# //画像一覧 %>
+  <%# ログインしていない場合のダミー %>
   <% else %>
     <P class="dummy-contents">
       <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
       <p class='info-text dummy-info-text'>※ ご利用になる方は画面右上よりログインしてください。</p>
     </p>
+    <div class='post-contents dummy-contents'>
+      <ul class='post-lists'>
+        <%# 画像一覧 %>
+          <%= render "shared/everyone_index", everyone_posts: @everyone_posts %>
+        <%# /画像一覧 %>
+      </ul>
+    </div>
   <% end %>
+  <%# //ログインしていない場合のダミー %>
 </div>

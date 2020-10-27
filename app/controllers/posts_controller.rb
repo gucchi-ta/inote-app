@@ -2,9 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   def index
     # @posts = Post.includes(:user).order('created_at DESC')
-    if user_signed_in?
-      @posts = Post.where( "user_id LIKE ?", "%#{current_user.id}%").order('created_at DESC')
-    end
+    @posts = Post.where('user_id LIKE ?', "%#{current_user.id}%").order('created_at DESC') if user_signed_in?
   end
 
   # def show
@@ -53,7 +51,7 @@ class PostsController < ApplicationController
   def hert
     # binding.pry
     post = Post.find(params[:id])
-    if post.hert 
+    if post.hert
       post.update(hert: false)
     else
       post.update(hert: true)

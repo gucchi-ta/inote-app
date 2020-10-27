@@ -18,6 +18,8 @@ class PostsController < ApplicationController
     # binding.pry
     @post = Post.new(post_params)
     if @post.valid?
+      @post.save(hert: false)
+      @post.save(grobal: false)
       @post.hert = false
       @post.grobal = false
       @post.save

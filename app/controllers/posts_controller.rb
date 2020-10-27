@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :everyone]
   def index
     # @posts = Post.includes(:user).order('created_at DESC')
-    @posts = Post.where('user_id LIKE ?', "%#{current_user.id}%").order('created_at DESC') if user_signed_in?
+    @posts = Post.where('user_id LIKE ?', "#{current_user.id}").order('created_at DESC') if user_signed_in?
     @everyone_posts = Post.where('grobal LIKE ?', "1").order('created_at DESC')
   end
 
@@ -88,7 +88,7 @@ class PostsController < ApplicationController
   def my_search
     # binding.pry
     post = Post.my_search(params[:keyword])
-    @posts = post.where('user_id LIKE ?', "%#{current_user.id}%")
+    @posts = post.where('user_id LIKE ?', "#{current_user.id}")
   end
 
   private

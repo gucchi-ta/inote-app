@@ -40,6 +40,7 @@
   width: 100%;
   border-radius: 15px;
   z-index: 0.5;
+  cursor: zoom-in;
 }
 
 .show-index-img:hover{
@@ -127,6 +128,7 @@
 .delete-icon{
   width: 20px;
   height: 20px;
+  margin-top: 10px;
 }
 
 /* //編集/削除ボタン */
@@ -137,6 +139,8 @@
 .hert-icon{
   width: 20px;
   height: 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 li[data-hert-check="true"] .hert-off-icon{
@@ -163,6 +167,8 @@ li[data-hert-check="false"] .hert-off-icon{
 .grobal-icon{
   width: 20px;
   height: 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 li[data-grobal-check="true"] .grobal-off-icon{

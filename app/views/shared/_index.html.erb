@@ -18,9 +18,6 @@
             <li>
               <%= link_to image_tag("edit-icon.png",class: "edit-icon"), edit_post_path(post.id), method: :get %>
             </li>
-            <li>
-              <%= link_to image_tag("delete-icon.png",class: "delete-icon"), post_path(post.id), method: :delete %>
-            </li>
           <% end %>
           <% if user_signed_in? %>
             <li class="hert-icon-box" data-hert-id=<%= post.id %> data-hert-check=<%= post.hert %>>
@@ -42,6 +39,11 @@
               <%= image_tag("grobal-blue-on-icon.png",class: "grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
             <% end %>
           </li>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <li>
+              <%= link_to image_tag("delete-icon.png",class: "delete-icon"), post_path(post.id), method: :delete %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>

@@ -13,6 +13,8 @@ class PostsController < ApplicationController
     # binding.pry
     @post = Post.new(post_params)
     if @post.valid?
+      @post.save(hert: false)
+      @post.save(grobal: false)
       @post.save
       redirect_to root_path
     else

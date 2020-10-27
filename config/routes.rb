@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
     collection do
       get 'everyone'
+      get 'search'
+      get 'my_search'
     end
   end
   resources :users, only: [:show] do

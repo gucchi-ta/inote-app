@@ -128,7 +128,7 @@
 .delete-icon{
   width: 20px;
   height: 20px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 /* //編集/削除ボタン */
@@ -140,7 +140,7 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 li[data-hert-check="true"] .hert-off-icon{
@@ -168,7 +168,7 @@ li[data-hert-check="false"] .hert-off-icon{
   width: 20px;
   height: 20px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 li[data-grobal-check="true"] .grobal-off-icon{

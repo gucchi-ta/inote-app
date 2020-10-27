@@ -16,15 +16,49 @@
   background-color: white;
   z-index: 1;
 }
-/* /ヘッダー全て */
+/* //ヘッダー全て */
 
 
 /* inoteアイコン */
 .inote-icon{
   height: 55px;
-  margin: 0 3vw;
+  margin: 0 1vw 0 3vw;
 }
-/* /inoteアイコン */
+/* //inoteアイコン */
+
+
+/* みんなの投稿 */
+
+.everyone-post-link{
+  font-size: 15px;
+  width: 138px;
+  margin-right: 1vw;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.everyone-post-link:hover{
+  background-color: #f3f3f3;
+}
+
+/* //みんなの投稿 */
+
+
+/* お気に入り */
+
+.favorite-post-link{
+  font-size: 15px;
+  width: 118px;
+  margin-right: 1vw;
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.favorite-post-link:hover{
+  background-color: #f3f3f3;
+}
+
+/* //お気に入り */
 
 
 /* 検索欄 */
@@ -32,7 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 75vw;
+  width: 65vw;
   margin-left: auto;
   margin-right: 30px;
 }
@@ -51,7 +85,6 @@
   padding-left: 20px;
   border: none;
   border-radius: 50px 0 0 50px;
-
 }
 
 .search-form>.input-box:focus{
@@ -73,7 +106,7 @@
 .search-icon {
   height: 100%;
 }
-/* 検索欄 */
+/* //検索欄 */
 
 
 /* ナビゲーション欄 */
@@ -141,4 +174,4 @@
 .devise_icon{
   height: 40px;
 }
-/* ナビゲーション欄 */
+/* //ナビゲーション欄 */

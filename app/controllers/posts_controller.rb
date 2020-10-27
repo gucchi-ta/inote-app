@@ -17,11 +17,11 @@ class PostsController < ApplicationController
   def create
     # binding.pry
     @post = Post.new(post_params)
+    @post.hert = false
+    @post.grobal = false
     if @post.valid?
-      @post.save(hert: false)
-      @post.save(grobal: false)
-      @post.hert = false
-      @post.grobal = false
+      # @post.save(hert: false)
+      # @post.save(grobal: false)
       @post.save
       redirect_to root_path
     else
@@ -70,6 +70,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:memo, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:memo, :image, :hert, :grobal).merge(user_id: current_user.id)
   end
 end

@@ -129,17 +129,14 @@
   height: 20px;
 }
 
+/* //編集/削除ボタン */
+
+
+/* お気に入りアイコン */
+
 .hert-icon{
   width: 20px;
   height: 20px;
-}
-
-.lock-icon{
-  width: 20px;
-  height: 20px;
-}
-
-li[data-hert-check="true"] {
 }
 
 li[data-hert-check="true"] .hert-off-icon{
@@ -158,10 +155,33 @@ li[data-hert-check="false"] .hert-off-icon{
   display: inline;
 }
 
+/* //お気に入りアイコン */
 
 
+/* 公開/非公開アイコン */
 
-/* //編集/削除ボタン */
+.grobal-icon{
+  width: 20px;
+  height: 20px;
+}
+
+li[data-grobal-check="true"] .grobal-off-icon{
+  display: none;
+}
+
+li[data-grobal-check="true"] .grobal-on-icon{
+  display: inline;
+}
+
+li[data-grobal-check="false"] .grobal-on-icon{
+  display: none;
+}
+
+li[data-grobal-check="false"] .grobal-off-icon{
+  display: inline;
+}
+
+/* 公開/非公開アイコン */
 
 
 /* ダミー */

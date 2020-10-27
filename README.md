@@ -28,7 +28,6 @@ Things you may want to cover:
 
 <!-- ユーザー管理機能のテーブル -->
 ## usersテーブル
-
 | Column     | Type    | Options    |
 | ---------- | ------- | ---------- |
 | nickname   | string  | null:false |
@@ -40,14 +39,13 @@ Things you may want to cover:
 | last_kana  | string  | null:false |
 | birthday   | date    | null:false |
 
-
 ### association
-
 - has_many :posts
+- has_many :albums
 
-<!-- 商品情報のテーブル -->
+
+<!-- 画像情報のテーブル -->
 ## postsテーブル
-
 | Column              | Type       | Options                       |
 | ------------------- | ---------- | ----------------------------- |
 | image               | string     | null:false                    |
@@ -55,6 +53,31 @@ Things you may want to cover:
 | user                | references | null:false, foreign_key: true |
 
 ### association
-
 - belongs_to :user
+- has_many :albums, throgh : post_alum_relations
+
+
+<!-- アルバム情報のテーブル -->
+## alubumsテーブル
+| Column              | Type       | Options                       |
+| ------------------- | ---------- | ----------------------------- |
+| alubum_name         | string     | null:false                    |
+| user                | references | null:false, foreign_key: true |
+
+### association
+- belongs_to :user
+- has_many   :posts, throgh : post_alum_relations
+
+
+<!-- 画像とアルバムの中間テーブル -->
+## post_alum_relationsテーブル
+| Column              | Type       | Options                       |
+| ------------------- | ---------- | ----------------------------- |
+| post                | references | null:false, foreign_key: true |
+| album               | references | null:false, foreign_key: true |
+
+### association
+- belongs_to :post
+- belongs_to :album
+
 

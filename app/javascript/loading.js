@@ -1,5 +1,3 @@
-require("jquery");
-
 $(function(){
 	var loader = $('.loader-wrap');
 

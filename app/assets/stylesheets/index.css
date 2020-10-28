@@ -2,7 +2,18 @@
 
 .main{
   margin-top: 80px;
-  padding: 0 3vw;
+  /* padding: 0 3vw; */
+  /* margin: 80px 3vw 0; */
+  /* margin: 80px auto 0; */
+  height: 100vh;
+  width: 100vw;
+}
+
+.post-contents{
+  height: 100%;
+  width: 100%;
+  /* margin: 0 auto; */
+  /* margin: 0 auto; */
 }
 
 /* //メイン全体 */
@@ -10,26 +21,24 @@
 
 /* 画像一覧 */
 
-.post-lists{
-  display: flex;
+.post-grids-container{
+  height: 100%;
+  /* width: 94vw; */
   width: 94vw;
-  flex-wrap: wrap;
-  /* align-items: baseline; */
-  align-items: flex-end;
+  position: relative;
+  margin: 0 auto;
 }
 
-.post-lists>li{
-  width: 15.66%;
+.grid{
+  /* width: 15.66%; */
+  width: 269.6px;
+  /* width: 188px; */
   margin: 0.5%;
+  /* margin: 10px; */
   border-radius: 15px;
   background-color: #3e3a39;
-  /* float: left; */
-}
-
-.post-lists:after{
-  content: "";
-  clear: both;
-  display: block;
+  float: left;
+  transition: top 1s ease, left 1s ease;
 }
 
 .post-img-content{

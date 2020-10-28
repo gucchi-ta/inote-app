@@ -1,13 +1,6 @@
 <% posts.each do |post| %>
   <div class='grid'>
     <div class='post-img-content'>
-      <%# data-lightbox %>
-      <%#= link_to post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
-        <%# <div> %>
-          <%#= image_tag post.image, class: "show-index-img" %>
-        <%# </div> %>
-      <%# end %>
-      <%# //data-lightbox %>
       <%# fancyBox3 %>
       <%= link_to post.image, data: {fancybox: "group"} do %>
         <div>
@@ -57,11 +50,3 @@
 <% end %>
 
 <%# <div class="sign_modal_wrapper"></div> %>
-
-
-
-
-
-<%# <script>
-	$('[data-fancybox]').fancybox();
-</script> %>

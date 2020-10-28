@@ -2,9 +2,6 @@
 
 .main{
   margin-top: 80px;
-  /* padding: 0 3vw; */
-  /* margin: 80px 3vw 0; */
-  /* margin: 80px auto 0; */
   height: 100vh;
   width: 100vw;
 }
@@ -12,8 +9,6 @@
 .post-contents{
   height: 100%;
   width: 100%;
-  /* margin: 0 auto; */
-  /* margin: 0 auto; */
 }
 
 /* //メイン全体 */
@@ -23,8 +18,8 @@
 
 .post-grids-container{
   height: 100%;
-  /* width: 94vw; */
   width: 94vw;
+  /* width: 100%; */
   position: relative;
   margin: 0 auto;
 }
@@ -32,9 +27,7 @@
 .grid{
   /* width: 15.66%; */
   width: 269.6px;
-  /* width: 188px; */
   margin: 0.5%;
-  /* margin: 10px; */
   border-radius: 15px;
   background-color: #3e3a39;
   float: left;
@@ -228,3 +221,65 @@ li[data-grobal-check="false"] .grobal-off-icon{
   cursor: default;
 }
 /* //cursor */
+
+
+/* 以下レスポンシブ対応 */
+
+
+/* iPadPro表示時 */
+@media (max-width: 1024px) {
+  /* メイン全体 */
+  .main{
+    margin: 80px 0 0;
+  }
+  /* //メイン全体 */
+  /* 画像一覧 */
+  .grid{
+    width: 297px;
+  }
+  /* //画像一覧 */
+}
+/* //iPadPro表示時 */
+
+
+/* iPad使用時 */
+@media (max-width: 768px) {
+  /* 画像一覧 */
+  .grid{
+    width: 231.6px;
+  }
+  /* //画像一覧 */
+}
+/* iPad使用時 */
+
+
+/* iphone6/7/8Plus使用時 */
+@media (max-width: 414px) {
+  /* 画像一覧 */
+  .grid{
+    width: 188px;
+  }
+  /* //画像一覧 */
+}
+/* //iphone6/7/8Plus使用時 */
+
+
+/* iphone6/7/8使用時 */
+@media (max-width: 375px) {
+  /* 画像一覧 */
+  .grid{
+    width: 169.7px;
+  }
+  /* //画像一覧 */
+}
+/* //iphone6/7/8使用時 */
+
+/* iphone5使用時 */
+@media (max-width: 320px) {
+  /* 画像一覧 */
+  .grid{
+    width: 144px;
+  }
+  /* //画像一覧 */
+}
+/* //iphone5使用時 */

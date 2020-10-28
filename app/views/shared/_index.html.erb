@@ -2,15 +2,22 @@
   <div class='grid'>
     <div class='post-img-content'>
       <%# data-lightbox %>
-      <%= link_to post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
+      <%#= link_to post.image, rel: "lightbox[.show-index-img]", class: "lightbox-show" do %>
+        <%# <div> %>
+          <%#= image_tag post.image, class: "show-index-img" %>
+        <%# </div> %>
+      <%# end %>
+      <%# //data-lightbox %>
+      <%# fancyBox3 %>
+      <%= link_to post.image, data: {fancybox: "group"} do %>
         <div>
           <%= image_tag post.image, class: "show-index-img" %>
         </div>
       <% end %>
+      <%# //fancyBox3 %>
       <div class="index-memo">
         <%= post.memo %>
       </div>
-      <%# //data-lightbox %>
       <div class="index-arrow">
         <ul class="more_list">
           <% if user_signed_in? && current_user.id == post.user_id %>
@@ -49,4 +56,12 @@
   </div>
 <% end %>
 
-<div class="sign_modal_wrapper"></div>
+<%# <div class="sign_modal_wrapper"></div> %>
+
+
+
+
+
+<%# <script>
+	$('[data-fancybox]').fancybox();
+</script> %>

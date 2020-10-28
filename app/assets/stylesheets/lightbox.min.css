@@ -16,3 +16,26 @@
   height: 100% !important;
   width: auto !important;
 }
+
+/* スマート端末表示時 */
+@media (max-width: 1024px) {
+  #lightbox{
+    width: 100vw !important;
+    height: auto !important;
+    margin: auto 0;
+  }
+  
+  .lb-outerContainer{
+    width: 100% !important;
+  }
+  
+  .lb-container{
+    width: 100% !important;
+  }
+  
+  .lb-image{
+    width: 100% !important;
+    /* height: auto !important; */
+  }
+}
+/* //スマート端末表示時 */

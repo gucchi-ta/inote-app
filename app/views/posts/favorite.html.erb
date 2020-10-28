@@ -3,11 +3,11 @@
   <% if user_signed_in? %>
     <%# 画像一覧 %>
     <div class='post-contents'>
-      <ul class='post-lists'>
+      <div class='post-grids-container'>
         <%# 画像一覧 %>
         <%= render "shared/index", posts: @posts %>
         <%# /画像一覧 %>
-      </ul>
+      </div>
     </div>
     <%# 投稿画像がない場合のダミー %>
     <% if @posts.blank? %>
@@ -25,11 +25,11 @@
       <p class='info-text dummy-info-text'>※ ご利用になる方は画面右上よりログインしてください。</p>
     </p>
     <div class='post-contents dummy-contents'>
-      <ul class='post-lists'>
+      <div class='post-grids-container'>
         <%# 画像一覧 %>
           <%= render "shared/everyone_index", everyone_posts: @everyone_posts %>
         <%# /画像一覧 %>
-      </ul>
+      </div>
     </div>
   <% end %>
   <%# //ログインしていない場合のダミー %>

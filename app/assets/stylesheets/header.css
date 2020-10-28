@@ -33,7 +33,7 @@
   font-size: 15px;
   /* width: 138px; */
   width: 126px;
-  margin-right: 1vw;
+  /* margin-right: 1vw; */
   padding: 15px;
   border-radius: 50px;
 }
@@ -49,8 +49,8 @@
 
 .favorite-post-link{
   font-size: 15px;
-  width: 118px;
-  margin-right: 1vw;
+  width: 117px;
+  /* margin-right: 1vw; */
   padding: 15px;
   border-radius: 50px;
 }
@@ -68,6 +68,15 @@
   justify-content: space-between;
   align-items: center;
   width: 65vw;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.search-bar-nonlogin-contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 71vw;
   margin-left: auto;
   margin-right: 30px;
 }

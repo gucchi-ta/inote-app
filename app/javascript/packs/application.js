@@ -18,7 +18,8 @@ require('../preview')
 // require('../show')
 require('../loading')
 require("../hert")
-require("../grobal.js")
+require("../grobal")
+require("../index_grid")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

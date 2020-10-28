@@ -91,6 +91,10 @@ class PostsController < ApplicationController
     @posts = post.where('user_id LIKE ?', "#{current_user.id}")
   end
 
+  def favorite
+    @posts = Post.where('user_id LIKE ? and hert LIKE ?', "#{current_user.id}", "1").order('created_at DESC') if user_signed_in?
+  end
+
   private
 
   def move_to_index

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'everyone'
       get 'search'
       get 'my_search'
+      get 'favorite'
     end
   end
   resources :users, only: [:show] do

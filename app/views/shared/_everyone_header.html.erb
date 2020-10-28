@@ -1,19 +1,30 @@
 <header class='top-page-header'>
   <%= link_to image_tag("inote_logo.png", class:"inote-icon"), "/" %>
-  <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link", style: "color: white; text-decoration: none; background-color: #3e3a39; width: 126px" %>
-  <div class='search-bar-contents'>
-    <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
-      <%= form.text_field :keyword, placeholder: "検索する", class: "input-box" %>
-      <button class="search-button">
-        <%= image_tag "search_icon.png", class:"search-icon" %>
-      </button>
-    <% end %>
-  </div>
-  <div>
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
+    <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link", style: "color: white; text-decoration: none; background-color: #3e3a39; width: 138px;" %>
+    <%= link_to "お気に入り", favorite_posts_path, class: "favorite-post-link", style: "color: #666666; text-decoration: none; margin-right: 1vw;" %>
+    <div class='search-bar-contents'>
+      <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
+        <%= form.text_field :keyword, placeholder: "検索する", class: "input-box" %>
+        <button class="search-button">
+          <%= image_tag "search_icon.png", class:"search-icon" %>
+        </button>
+      <% end %>
+    </div>
+    <div>
       <%= link_to image_tag('upload_icon_2.png', class: "devise_icon", id: "upload_icon"), new_post_path %>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link", style: "color: white; text-decoration: none; background-color: #3e3a39; width: 126px; margin-right: 1vw;" %>
+    <div class='search-bar-nonlogin-contents'>
+      <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
+        <%= form.text_field :keyword, placeholder: "検索する", class: "input-box" %>
+        <button class="search-button">
+          <%= image_tag "search_icon.png", class:"search-icon" %>
+        </button>
+      <% end %>
+    </div>
+  <% end %>
   <div class='nav'>
     <ul class='lists-right'>
       <%# ログインの有無で表示切り替え%>

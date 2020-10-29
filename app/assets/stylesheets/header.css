@@ -94,8 +94,8 @@
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 9.5vw - 552px);
-  margin-left: auto;
-  margin-right: 30px;
+  margin-left: 1vw;
+  margin-right: 3vw;
 }
 
 .search-bar-nonlogin-contents {
@@ -103,7 +103,8 @@
   justify-content: space-between;
   align-items: center;
   width: calc(100% - 9.5vw - 345px);
-  margin-left: auto;
+  margin-left: 1vw;
+  margin-right: 3vw;
 }
 
 .search-form {
@@ -303,15 +304,11 @@
   }
   .favorite-post-link { display: none !important; }
   .everyone-post-link { display: none !important; }
-  .search-bar-nonlogin-contents{
-    width: calc(100vw - 9.5vw - 100px);
-    margin-left: 15px !important;
-    margin-right: 15px;
-  }
   .search-bar-contents{
     width: calc(100vw - 9.5vw - 100px);
-    padding-left: 3vw;
-    margin-right: 1vw;
+  }
+  .search-bar-nonlogin-contents{
+    width: calc(100vw - 9.5vw - 100px);
   }
   #upload_icon{ margin-top: 8px !important;}
   .nav { 

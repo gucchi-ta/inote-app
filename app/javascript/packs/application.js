@@ -21,6 +21,7 @@ require("../hert")
 require("../grobal")
 require("../index_grid")
 require("../jquery.fancybox.min")
+require("../left_sp_info")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

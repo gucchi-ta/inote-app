@@ -179,6 +179,14 @@ body.compensate-for-scrollbar {
     vertical-align: middle;
 }
 
+/* 追記 */
+@media (max-width: 1024px) {
+    .fancybox-content {
+        
+    }
+}
+/* //追記 */
+
 .fancybox-slide--image .fancybox-content {
     animation-timing-function: cubic-bezier(.5, 0, .14, 1);
     -webkit-backface-visibility: hidden;
@@ -322,6 +330,15 @@ body.compensate-for-scrollbar {
     visibility: inherit;
     width: 44px;
 }
+
+
+/* 追記 */
+@media (max-width: 1024px) {
+    .fancybox-button {
+        display: none;
+    }
+}
+/* //追記 */
 
 .fancybox-button,
 .fancybox-button:visited,

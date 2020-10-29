@@ -47,32 +47,17 @@
 /* //ヘッダー左 小画面ポップアップ*/
 
 
-/* みんなの投稿 */
-
-.everyone-post-link{
-  font-size: 15px;
-  /* width: 138px; */
-  width: 120px;
-  /* margin-right: 1vw; */
-  padding: 15px;
-  border-radius: 50px;
-}
-
-.everyone-post-link:hover{
-  background-color: #f3f3f3;
-}
-
-/* //みんなの投稿 */
-
-
 /* お気に入り */
 
 .favorite-post-link{
-  font-size: 15px;
-  width: 105px;
-  /* margin-right: 1vw; */
-  padding: 15px;
+  /* font-size: 15px; */
+  font-size: 13px;
+  /* width: 105px; */
+  width: 95px;
+  /* padding: 15px; */
+  padding: 17px 5px 5px;
   border-radius: 50px;
+  text-align: center ;
 }
 
 .favorite-post-link:hover{
@@ -82,14 +67,33 @@
 /* //お気に入り */
 
 
+/* みんなの投稿 */
+
+.everyone-post-link{
+  /* font-size: 15px; */
+  font-size: 13px;
+  /* width: 120px; */
+  width: 110px;
+  /* padding: 15px; */
+  padding: 17px 5px 5px;
+  border-radius: 50px;
+  text-align: center ;
+}
+
+.everyone-post-link:hover{
+  background-color: #f3f3f3;
+}
+
+/* //みんなの投稿 */
+
+
 /* 検索欄 */
 
 .search-bar-contents {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* width: 65vw; */
-  width: calc(100% - 9.5vw - 577px);
+  width: calc(100% - 9.5vw - 552px);
   margin-left: auto;
   margin-right: 30px;
 }
@@ -98,9 +102,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 9.5vw - 390px);
+  width: calc(100% - 9.5vw - 345px);
   margin-left: auto;
-  margin-right: 30px;
 }
 
 .search-form {
@@ -208,7 +211,7 @@
 }
 
 .devise_icon{
-  height: 40px;
+  height: 35px;
 }
 
 /* //ナビゲーション欄 */
@@ -234,27 +237,12 @@
   .search-bar-contents{
     width: calc(100vw - 9.5vw - 330px);
   }
-  .favorite-post-link {
-    font-size: 13px;
-    width: 105px;
-    padding: 17px 5px 5px;
-    text-align: center;
-  }
-  .everyone-post-link {
-    font-size: 13px;
-    width: 120px;
-    padding: 17px 5px 5px;
-    text-align: center;
-    margin-right: 1vw;
-  }
   .search-bar-nonlogin-contents{
     width: calc(100vw - 9.5vw - 300px);
     margin-left: 15px !important;
     margin-right: 15px;
   }
-  /* .post-grids-container{ z-index: 2 !important; } */
-  
-  
+  .devise_icon{ height: 35px !important; }  
 }
 
 

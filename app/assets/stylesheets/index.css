@@ -223,27 +223,69 @@ li[data-grobal-check="false"] .grobal-off-icon{
 /* //cursor */
 
 
+
 /* 以下レスポンシブ対応 */
 
 
-/* iPadPro表示時 */
-@media (max-width: 1024px) {
-  /* メイン全体 */
+
+/* 編集ボタン配置 */
+
+
+/* タブレット */
+@media screen and(max-width: 1024px) {
+    /* メイン全体 */
   .main{
     margin: 80px 0 0;
   }
   /* //メイン全体 */
+
+  .post-img-content .index-arrow .more_list{ width: calc(100% - 2%) !important; left: 1% !important; right: 1% !important; top: initial !important; bottom: 0 !important;}
+  /* .post-img-content .index-arrow { width: calc(100% - 4%) !important; left: 2% !important; right: 2% !important; top: 100% !important;} */
+  .more_list li { display: inline; }
+  .more_list li a .edit-icon {
+    width: 22% !important;
+    height: auto;
+  }
+  .more_list li .hert-icon {
+    width: 22% !important;
+    height: auto;
+    margin-top: 0 !important;
+  }
+  .more_list li .grobal-icon {
+    width: 22% !important;
+    height: auto;
+    margin-top: 0 !important;
+  }
+  .more_list li a .delete-icon {
+    width: 22% !important;
+    height: auto;
+    margin-top: 0 !important;
+  }
+  .index-memo {
+    bottom: initial !important;
+    top: -12px !important;
+  }
+  .index-arrow{ width: calc(100% - 10px) !important; height: calc(20% + 5px); top: initial !important; bottom: 0 !important; padding: 0; }
+
+}
+
+/* //編集ボタン配置 */
+
+
+/* グリッドサイズ */
+
+/* iPadPro使用時 */
+@media screen and(max-width: 1024px) {
   /* 画像一覧 */
   .grid{
     width: 297px;
   }
   /* //画像一覧 */
 }
-/* //iPadPro表示時 */
-
+/* iPadPro使用時 */
 
 /* iPad使用時 */
-@media (max-width: 768px) {
+@media screen and(max-width: 768px) {
   /* 画像一覧 */
   .grid{
     width: 231.6px;
@@ -254,7 +296,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8Plus使用時 */
-@media (max-width: 414px) {
+@media screen and(max-width: 414px) {
   /* 画像一覧 */
   .grid{
     width: 188px;
@@ -265,17 +307,28 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8使用時 */
-@media (max-width: 375px) {
+@media screen and(max-width: 375px) {
   /* 画像一覧 */
   .grid{
     width: 169.7px;
   }
   /* //画像一覧 */
-}
+
 /* //iphone6/7/8使用時 */
+}
+/* Galavy S5使用時 */
+
+@media screen and(max-width: 360px) {
+  /* 画像一覧 */
+  .grid{
+    width: 163px;
+  }
+  /* //画像一覧 */
+}
+/* //Galavy S5使用時 */
 
 /* iphone5使用時 */
-@media (max-width: 320px) {
+@media screen and(max-width: 320px) {
   /* 画像一覧 */
   .grid{
     width: 144px;
@@ -283,3 +336,5 @@ li[data-grobal-check="false"] .grobal-off-icon{
   /* //画像一覧 */
 }
 /* //iphone5使用時 */
+
+/* //グリッドサイズ */

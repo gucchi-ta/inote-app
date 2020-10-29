@@ -14,7 +14,7 @@
   top: 0px;
   left: 0px;
   background-color: white;
-  z-index: 2;
+  z-index: 100;
 }
 /* //ヘッダー全て */
 
@@ -25,6 +25,26 @@
   margin: 0 1vw 0 3vw;
 }
 /* //inoteアイコン */
+
+
+/* ヘッダー左 小画面ポップアップ*/
+
+.left-sp-info-box{
+  position: absolute;
+  margin-top: 20px;
+  padding: 10px 5px 15px 10px;
+  height: 94px;
+  width: 150px;
+  background-color: white;
+  border-radius: 15px;
+  display: none;
+}
+
+.arrow_bk-icon {
+  display: none;
+}
+
+/* //ヘッダー左 小画面ポップアップ*/
 
 
 /* みんなの投稿 */
@@ -63,6 +83,7 @@
 
 
 /* 検索欄 */
+
 .search-bar-contents {
   display: flex;
   justify-content: space-between;
@@ -117,10 +138,15 @@
 .search-icon {
   height: 100%;
 }
+
 /* //検索欄 */
 
 
 /* ナビゲーション欄 */
+
+#upload_icon{
+  margin-top: 6px;
+}
 .nav {
   font-size: 18px;
   display: flex;
@@ -128,6 +154,7 @@
   flex-wrap: wrap;
   /* width: 300px; */
   margin-left: 1vw;
+  margin-top: 6px;
 }
 
 .lists-left {
@@ -152,10 +179,11 @@
   list-style: none;
   align-items: flex-end;
   margin-right: 3vw;
+  height: 40px;
 }
 
 #user_nickname_box{
-  padding-bottom: 10px;
+  padding-bottom: 7px;
 }
 
 .user-nickname {
@@ -163,6 +191,7 @@
   color: #898989;
   font-weight: bold;
   margin-right: 1vw;
+  /* margin-top: 6px; */
 }
 
 .logout {
@@ -178,11 +207,138 @@
   margin-left: 0.5vw;
 }
 
-.upload-icon{
-  padding: 5px;
-}
-
 .devise_icon{
   height: 40px;
 }
+
 /* //ナビゲーション欄 */
+
+
+
+/* 以下レスポンシブ対応 */
+
+
+
+/* パソコンサイズで見たときは"pc"のclassがついた画像が表示される */
+.inline-pc { display: inline !important; }
+.sp { display: none !important; }
+.tb { display: none !important; }
+.pc { display: block !important; }
+
+ 
+/* タブレットサイズで見たときは"tb"のclassがついた画像が表示される */
+
+@media (max-width: 1024px) {
+  .pc { display: none !important; }
+  .tb { display: block !important; }
+  .search-bar-contents{
+    width: calc(100vw - 9.5vw - 330px);
+  }
+  .favorite-post-link {
+    font-size: 13px;
+    width: 105px;
+    padding: 17px 5px 5px;
+    text-align: center;
+  }
+  .everyone-post-link {
+    font-size: 13px;
+    width: 120px;
+    padding: 17px 5px 5px;
+    text-align: center;
+    margin-right: 1vw;
+  }
+  .search-bar-nonlogin-contents{
+    width: calc(100vw - 9.5vw - 300px);
+    margin-left: 15px !important;
+    margin-right: 15px;
+  }
+  /* .post-grids-container{ z-index: 2 !important; } */
+  
+  
+}
+
+
+/* スマートフォンサイズで見たときは"sp"のclassがついた画像が表示される */
+
+@media (max-width: 599px) {
+  .pc { display: none !important; }
+  .tb { display: none !important; }
+  .sp { display: block !important; }
+  .left-sp-info{
+    position: relative;
+  }
+  .favorite-sp-link { 
+    font-size: 15px;
+    width: 105px;
+    padding: 5px 5px 5px;
+    text-align: center;
+    border-radius: 50px;
+    margin: 0;
+    display: block;
+  }
+  .favorite-sp-link:hover{
+    background-color: #f3f3f3;
+  }
+  .everyone-sp-link { 
+    font-size: 15px;
+    width: 120px;
+    padding: 5px 5px 5px;
+    text-align: center;
+    border-radius: 50px;
+    display: block;
+    margin-top: 8px;
+  }
+  .everyone-sp-link:hover{
+    background-color: #f3f3f3;
+  }
+  .arrow_bk-icon{
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 5px;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+    display:block
+  }
+  .arrow_bk-icon:hover{
+    background-color: #f3f3f3;
+  }
+  .favorite-post-link { display: none !important; }
+  .everyone-post-link { display: none !important; }
+  .search-bar-nonlogin-contents{
+    width: calc(100vw - 9.5vw - 100px);
+    margin-left: 15px !important;
+    margin-right: 15px;
+  }
+  .search-bar-contents{
+    width: calc(100vw - 9.5vw - 100px);
+    padding-left: 3vw;
+    margin-right: 1vw;
+  }
+  #upload_icon{ margin-top: 8px !important;}
+  .nav { 
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .devise_icon{ height: 35px !important; }
+  .lists-right{ height: 35px !important; }
+  .search-button{ width: 50px; }
+  .form-wrap{ width: 100% !important; }
+  .form-group{ width: 80% !important; }
+  .register-btn{ width: 80% !important; }
+  .registration-main { width: 100vw !important; min-width: 0 !important;}
+  .top-page-second-header{ width: 100vw !important; }
+  .dummy-text {font-size: 20px !important;}
+  .info-text{ font-size: 11px !important; }
+  .search-icon{ display: none !important; }
+  .search-button { width: 20px !important; }
+}
+
+@media (max-width: 360px) {
+  .devise_icon{ height: 32px !important;}
+  .lists-right{ height: 32px !important; }
+  .dummy-text {font-size: 17px !important; }
+  .info-text{ font-size: 8px !important; }
+}
+
+

@@ -226,13 +226,15 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 /* 以下レスポンシブ対応 */
 
+/* andと()を付けたら適用されない */
+/* @media screen and (max-width: ....) {} */
 
 
 /* 編集ボタン配置 */
 
 
 /* タブレット */
-@media screen and(max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     /* メイン全体 */
   .main{
     margin: 80px 0 0;
@@ -275,7 +277,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 /* グリッドサイズ */
 
 /* iPadPro使用時 */
-@media screen and(max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   /* 画像一覧 */
   .grid{
     width: 297px;
@@ -285,7 +287,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 /* iPadPro使用時 */
 
 /* iPad使用時 */
-@media screen and(max-width: 768px) {
+@media screen and (max-width: 768px) {
   /* 画像一覧 */
   .grid{
     width: 231.6px;
@@ -296,7 +298,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8Plus使用時 */
-@media screen and(max-width: 414px) {
+@media screen and (max-width: 414px) {
   /* 画像一覧 */
   .grid{
     width: 188px;
@@ -307,7 +309,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8使用時 */
-@media screen and(max-width: 375px) {
+@media screen and (max-width: 375px) {
   /* 画像一覧 */
   .grid{
     width: 169.7px;
@@ -318,7 +320,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 }
 /* Galavy S5使用時 */
 
-@media screen and(max-width: 360px) {
+@media screen and (max-width: 360px) {
   /* 画像一覧 */
   .grid{
     width: 163px;
@@ -328,7 +330,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 /* //Galavy S5使用時 */
 
 /* iphone5使用時 */
-@media screen and(max-width: 320px) {
+@media screen and (max-width: 320px) {
   /* 画像一覧 */
   .grid{
     width: 144px;

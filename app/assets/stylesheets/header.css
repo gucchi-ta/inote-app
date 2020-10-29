@@ -157,7 +157,7 @@
   flex-wrap: wrap;
   /* width: 300px; */
   margin-left: 1vw;
-  margin-top: 6px;
+  /* margin-top: 6px; */
 }
 
 .lists-left {
@@ -223,17 +223,23 @@
 
 
 /* パソコンサイズで見たときは"pc"のclassがついた画像が表示される */
-.inline-pc { display: inline !important; }
-.sp { display: none !important; }
 .tb { display: none !important; }
+.in-tb{ display: none !important; }
+.sp { display: none !important; }
+.in-sp { display: none !important; }
 .pc { display: block !important; }
+.in-pc { display: inline!important; }
 
  
 /* タブレットサイズで見たときは"tb"のclassがついた画像が表示される */
 
 @media (max-width: 1024px) {
   .pc { display: none !important; }
+  .in-pc { display: none !important; }
+  .sp { display: none !important; }
+  .in-sp { display: none !important; }
   .tb { display: block !important; }
+  .in-tb { display: inline !important; }
   .search-bar-contents{
     width: calc(100vw - 9.5vw - 330px);
   }
@@ -241,8 +247,9 @@
     width: calc(100vw - 9.5vw - 300px);
     margin-left: 15px !important;
     margin-right: 15px;
-  }
-  .devise_icon{ height: 35px !important; }  
+  } 
+  .registration-main { width: 100vw !important; min-width: 0 !important;}
+  .top-page-second-header{ width: 100vw !important; }
 }
 
 
@@ -250,8 +257,11 @@
 
 @media (max-width: 599px) {
   .pc { display: none !important; }
+  .in-pc { display: none !important; }
   .tb { display: none !important; }
+  .in-tb { display: none !important; }
   .sp { display: block !important; }
+  .in-sp { display: inline !important; }
   .left-sp-info{
     position: relative;
   }
@@ -308,14 +318,16 @@
     margin-left: 0;
     margin-top: 8px;
   }
-  .devise_icon{ height: 35px !important; }
+  .devise_sp_icon{
+    height: 35px;
+    padding: 5px;
+  }
   .lists-right{ height: 35px !important; }
   .search-button{ width: 50px; }
   .form-wrap{ width: 100% !important; }
   .form-group{ width: 80% !important; }
   .register-btn{ width: 80% !important; }
-  .registration-main { width: 100vw !important; min-width: 0 !important;}
-  .top-page-second-header{ width: 100vw !important; }
+  .login-btn{ width: 80% !important; }
   .dummy-text {font-size: 20px !important;}
   .info-text{ font-size: 11px !important; }
   .search-icon{ display: none !important; }

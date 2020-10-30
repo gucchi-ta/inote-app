@@ -382,7 +382,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 /* //Galavy S5使用時 */
 
 /* iphone5使用時 */
-@media screen and(max-width: 320px) {
+@media screen and (max-width: 320px) {
   /* 画像一覧 */
   .grid{
     width: 144px;

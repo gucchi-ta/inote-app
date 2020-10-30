@@ -292,7 +292,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 
-@media screen and(max-width: 1024px) {
+/* @media screen and(max-width: 1024px) {
 
   .post-img-content .index-arrow .more_list{ width: calc(100% - 2%) !important; left: 1% !important; right: 1% !important; top: initial !important; bottom: 0 !important;}
   .more_list li { display: inline; }
@@ -321,7 +321,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
   }
   .index-arrow{ width: calc(100% - 10px) !important; height: calc(20% + 5px); top: initial !important; bottom: 0 !important; padding: 0; }
 
-}
+} */
 
 /* //編集ボタン配置 */
 

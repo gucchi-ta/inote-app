@@ -280,7 +280,8 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 @media (max-width: 747px) and (min-width: 0px) {
   .post-grids-container {
-      width: 485px;
+      width: 100%;
+      margin: 0 3vw;
   }
 }
 
@@ -350,7 +351,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8Plus使用時 */
-@media screen and(max-width: 414px) {
+@media screen and (max-width: 414px) {
   /* 画像一覧 */
   .grid{
     width: 188px;
@@ -361,7 +362,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 
 /* iphone6/7/8使用時 */
-@media screen and(max-width: 375px) {
+@media screen and (max-width: 375px) {
   /* 画像一覧 */
   .grid{
     width: 169.7px;
@@ -372,7 +373,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 }
 /* Galavy S5使用時 */
 
-@media screen and(max-width: 360px) {
+@media screen and (max-width: 360px) {
   /* 画像一覧 */
   .grid{
     width: 163px;

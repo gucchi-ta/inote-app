@@ -278,13 +278,13 @@ li[data-grobal-check="false"] .grobal-off-icon{
   }
 }
 
-@media (max-width: 747px) and (min-width: 415px) {
+@media (max-width: 747px) and (min-width: 502px) {
   .post-grids-container {
       width: 485px;
   }
 }
 
-@media (max-width: 414px) and (min-width: 0px) {
+@media (max-width: 501px) and (min-width: 0px) {
   .post-grids-container {
       width: 238.5px;
   }

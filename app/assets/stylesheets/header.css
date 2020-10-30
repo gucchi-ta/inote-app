@@ -241,6 +241,10 @@
   .in-sp { display: none !important; }
   .tb { display: block !important; }
   .in-tb { display: inline !important; }
+  .inote-icon{
+    height: 51px;
+    margin: 3px 1vw 0 30px;
+  }
   .search-bar-contents{
     width: calc(100vw - 9.5vw - 330px);
   }
@@ -263,6 +267,9 @@
   .in-tb { display: none !important; }
   .sp { display: block !important; }
   .in-sp { display: inline !important; }
+  .inote-icon{
+    margin: 3px 1vw 0 18px;
+  }
   .left-sp-info{
     position: relative;
   }

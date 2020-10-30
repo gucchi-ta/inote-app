@@ -280,7 +280,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 @media (max-width: 747px) and (min-width: 0px) {
   .post-grids-container {
-      width: 100%;
+      width: 100vw;
       margin: 0 3vw;
   }
 }

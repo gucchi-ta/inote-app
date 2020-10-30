@@ -12,7 +12,6 @@ require("@rails/activestorage").start()
 require("channels")
 
 //jsファイルを読み込む
-// require("../user_fucus")
 // require("../img_form")
 require('../preview')
 // require('../show')

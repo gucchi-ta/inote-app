@@ -58,8 +58,6 @@ $(function() {
     numOfCol = Math.floor((winObject.width() - offsetX * 2) / colWidth);
   }
 
-  // ここまで
-
   // gridArrayに新しいgridを追加
   function pushGridArray(x, y, size, height) {
       for (var i=0; i<size; i++) {

@@ -278,17 +278,17 @@ li[data-grobal-check="false"] .grobal-off-icon{
   }
 }
 
-@media (max-width: 747px) and (min-width: 0px) {
+@media (max-width: 501px) and (min-width: 500px) {
+  .post-grids-container {
+      width: 238.5px;
+  }
+}
+
+@media (max-width: 499px) and (min-width: 0px) {
   .post-grids-container {
       width: 94vw;
   }
 }
-
-/* @media (max-width: 501px) and (min-width: 0px) {
-  .post-grids-container {
-      width: 238.5px;
-  }
-} */
 
 
 

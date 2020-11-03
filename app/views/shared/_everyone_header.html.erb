@@ -6,7 +6,7 @@
   <% if user_signed_in? %>
     <%# スマホ %>
     <div class="left-sp-info">
-      <%= image_tag("arrow_bk.png" , class: "arrow_bk-icon") %>
+      <%= image_tag("arrow_bk.png" , class: "arrow-bk-icon") %>
       <div class="left-sp-info-box">
         <%= link_to "お気に入り", favorite_posts_path, class: "favorite-sp-link", style: "color: #666666; text-decoration: none;" %>
         <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
@@ -43,8 +43,8 @@
 
     <%# スマホ %>
     <div class="left-sp-info">
-      <%= image_tag("arrow_bk.png" , class: "arrow_bk-icon") %>
-      <div class="left-sp-info-box" style="height: 62px !important;">
+      <%= image_tag("arrow_bk.png" , class: "arrow-bk-nonlog-icon") %>
+      <div class="left-sp-nonlog-info-box">
         <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
       </div>
     </div>

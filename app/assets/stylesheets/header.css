@@ -40,7 +40,18 @@
   display: none;
 }
 
-.arrow_bk-icon {
+.left-sp-nonlog-info-box{
+  position: absolute;
+  margin-top: 20px;
+  padding: 10px 5px 15px 10px;
+  height: 67px;
+  width: 150px;
+  background-color: white;
+  border-radius: 15px;
+  display: none;
+}
+
+.arrow-bk-icon, .arrow-bk-nonlog-icon {
   display: none;
 }
 
@@ -297,7 +308,7 @@
   .everyone-sp-link:hover{
     background-color: #f3f3f3;
   }
-  .arrow_bk-icon{
+  .arrow-bk-icon, .arrow-bk-nonlog-icon{
     height: 40px;
     margin-top: 7px;
     margin-left: 5px;
@@ -306,7 +317,7 @@
     cursor: pointer;
     display:block
   }
-  .arrow_bk-icon:hover{
+  .arrow-bk-icon:hover, .arrow-bk-nonlog-icon:hover{
     background-color: #f3f3f3;
   }
   .favorite-post-link { display: none !important; }

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :everyone]
+  before_action :move_to_index, except: [:index, :everyone, :search]
   def index
     # @posts = Post.includes(:user).order('created_at DESC')
     @posts = Post.where('user_id LIKE ?', current_user.id.to_s).order('created_at DESC') if user_signed_in?

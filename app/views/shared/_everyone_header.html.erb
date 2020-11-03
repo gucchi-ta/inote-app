@@ -2,6 +2,7 @@
   <%= link_to image_tag("inote_logo.png", class: "inote-icon pc"), "/" %>
   <%= link_to image_tag("inote_sp_logo.png", class: "inote-icon tb sp"), "/" %>
 
+  <%# ログイン時 %>
   <% if user_signed_in? %>
     <%# スマホ %>
     <div class="left-sp-info">
@@ -36,12 +37,14 @@
     </ul>
   </div>
 
+  <%# //ログイン時 %>
   <% else %>
+  <%# ログアウト時 %>
 
     <%# スマホ %>
     <div class="left-sp-info">
       <%= image_tag("arrow_bk.png" , class: "arrow_bk-icon") %>
-      <div class="left-sp-info-box"　style="height: 62px !important;">
+      <div class="left-sp-info-box" style="height: 62px !important;">
         <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
       </div>
     </div>
@@ -63,5 +66,7 @@
         <li><%= link_to image_tag('signup_sp_icon.png', class: "devise_sp_icon in-sp", id: "signup_icon"), new_user_registration_path, class: "sign-up" %></li>
       </ul>
     </div>
+
   <% end %>
+  <%# //ログアウト時 %>
 </header>

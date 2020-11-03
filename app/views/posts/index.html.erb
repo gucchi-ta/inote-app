@@ -8,20 +8,20 @@
   <% if user_signed_in? %>
     <%# 画像一覧 %>
     <div class='post-contents'>
+      <%# 投稿画像がない場合のダミー %>
+      <% if @posts.where('id >= 1').blank? %>
+        <P class="dummy-contents">
+          <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
+          <p class='info-text dummy-info-text'>※ 画面右上より画像をアップロードして下さい。</p>
+        </p>
+      <% end %>
+      <%# //投稿画像がない場合のダミー %>
       <div class='post-grids-container'>
         <%# 画像一覧 %>
         <%= render "shared/index", posts: @posts %>
         <%# /画像一覧 %>
       </div>
     </div>
-    <%# 投稿画像がない場合のダミー %>
-    <% if @posts.where('id >= 1').blank? %>
-      <P class="dummy-contents">
-        <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
-        <p class='info-text dummy-info-text'>※ 画面右上より画像をアップロードして下さい。</p>
-      </p>
-    <% end %>
-    <%# //投稿画像がない場合のダミー %>
     <%# //画像一覧 %>
   <%# ログインしていない場合のダミー %>
   <% else %>

@@ -29,7 +29,7 @@ $(function() {
   var gridArray = [],
     colWidth,
     offsetX = 5,    // 横方向の隙間
-    offsetY = 10,   // 縦方向の隙間
+    offsetY = 13,   // 縦方向の隙間
     numOfCol = 5,
     elements,
     winObject;

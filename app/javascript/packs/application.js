@@ -18,7 +18,7 @@ require('../preview')
 require('../loading')
 require("../hert")
 require("../grobal")
-require("../index_grid")
+require("../grid_index")
 require("../jquery.fancybox.min")
 require("../left_sp_info")
 

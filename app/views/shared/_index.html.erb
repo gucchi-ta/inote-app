@@ -11,6 +11,7 @@
       <div class="index-memo">
         <%= post.memo %>
       </div>
+      <%# 各種アイコン %>
       <div class="index-arrow">
         <ul class="more_list">
           <% if user_signed_in? && current_user.id == post.user_id %>
@@ -45,6 +46,7 @@
           <% end %>
         </ul>
       </div>
+      <%# //各種アイコン %>
     </div>
   </div>
 <% end %>

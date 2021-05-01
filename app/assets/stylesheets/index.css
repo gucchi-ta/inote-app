@@ -47,13 +47,15 @@
   background-color: #3e3a39;
   float: left;
   transition: top 1s ease, left 1s ease;
-  outline: none;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
-  cursor:pointer;
 }
 
 .index-img-content{
   position: relative;
+}
+
+.index-img-content a {
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  cursor:pointer;
 }
 
 .show-index-img{

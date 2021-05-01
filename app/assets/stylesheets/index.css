@@ -47,6 +47,7 @@
   background-color: #3e3a39;
   float: left;
   transition: top 1s ease, left 1s ease;
+  outline: none;
 }
 
 .index-img-content{

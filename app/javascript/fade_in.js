@@ -1,4 +1,4 @@
-$('.main').css('visibility','hidden')
+// $('.main').css('visibility','hidden')
 
 // $(window).on('load', function(){
 //   $(".main").addClass('fadeInDisplay');

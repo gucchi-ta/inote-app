@@ -1,5 +1,4 @@
-$(function() {
-
+// $(function() {
   // 画像読み込み完了後に実行
   $(window).on('load', function() {
     elements = $('.post-grids-container');
@@ -147,4 +146,4 @@ $(function() {
           return -1;
       };
   }
-});
+// });

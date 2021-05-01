@@ -14,12 +14,13 @@ require("channels")
 //jsファイルを読み込む
 // require("../img_form")
 require('../preview')
-require('../loading')
+// require('../loading')
 require("../hert")
 require("../grobal")
-require("../grid_index")
+// require("../grid_index")
 require("../jquery.fancybox.min")
 require("../left_sp_info")
+require("../grid_index")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

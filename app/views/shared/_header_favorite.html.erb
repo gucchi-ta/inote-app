@@ -1,14 +1,14 @@
 <header class='top-page-header'>
   <%= link_to image_tag("inote_logo.png", class: "inote-icon pc"), "/" %>
   <%= link_to image_tag("inote_sp_logo.png", class: "inote-icon tb sp"), "/" %>
-  <div class="left-sp-info">
+  <div class="left-sp-info sp">
     <%= image_tag("arrow_bk.png" , class: "arrow-bk-icon") %>
     <div class="left-sp-info-box">
-      <%= link_to "お気に入り", favorite_posts_path, class: "favorite-sp-link", style: "color: #666666; text-decoration: none;" %>
+      <%= link_to "お気に入り", favorite_posts_path, class: "favorite-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
       <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: #666666; text-decoration: none;" %>
     </div>
   </div>
-  <%= link_to "お気に入り", favorite_posts_path, class: "favorite-post-link pc tb", style: "color: #666666; text-decoration: none;" %>
+  <%= link_to "お気に入り", favorite_posts_path, class: "favorite-post-link pc tb" , style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
   <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link pc tb", style: "color: #666666; text-decoration: none;" %>
   <div class='search-bar-contents'>
     <%= form_with url: my_search_posts_path, local: true, method: :get, class: "search-form" do |form| %>

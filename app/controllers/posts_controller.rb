@@ -78,7 +78,7 @@ class PostsController < ApplicationController
   end
 
   def everyone
-    @everyone_posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
+    @posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
   end
 
   def search

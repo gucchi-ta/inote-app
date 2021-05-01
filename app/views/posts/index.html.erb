@@ -1,9 +1,8 @@
 <% if user_signed_in? %>
   <%= render "shared/header" %>
 <% else %>
-  <%= render "shared/everyone_header" %>
+  <%= render "shared/header_nonlog" %>
 <% end %>
-
 <div class='main'>
   <% if user_signed_in? %>
     <%# 画像一覧 %>
@@ -32,7 +31,7 @@
     <div class='post-contents dummy-contents'>
       <div class='post-grids-container'>
         <%# 画像一覧 %>
-          <%= render "shared/everyone_index", everyone_posts: @everyone_posts %>
+          <%= render "shared/index_everyone", posts: @everyone_posts %>
         <%# /画像一覧 %>
       </div>
     </div>

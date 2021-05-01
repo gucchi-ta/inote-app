@@ -1,8 +1,8 @@
-<%= render "shared/everyone_header" %>
+<%= render "shared/header_everyone" %>
 <div class='main'>
   <div class='post-contents'>
     <%# 投稿画像がない場合のダミー %>
-    <% if @everyone_posts.where('id >= 1').blank? %>
+    <% if @posts.where('id >= 1').blank? %>
       <P class="dummy-contents">
         <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
         <p class='info-text dummy-info-text'>※ 画面右上より画像をアップロードして下さい。</p>
@@ -11,7 +11,7 @@
     <%# //投稿画像がない場合のダミー %>
     <div class='post-grids-container'>
       <%# 画像一覧 %>
-        <%= render "shared/everyone_index", everyone_posts: @everyone_posts %>
+        <%= render "shared/index_everyone", posts: @posts %>
       <%# /画像一覧 %>
     </div>
   </div>

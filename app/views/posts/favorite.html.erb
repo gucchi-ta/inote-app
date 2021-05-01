@@ -1,36 +1,20 @@
-<%= render "shared/favorite_header" %>
+<%= render "shared/header_favorite" %>
 <div class='main'>
-  <% if user_signed_in? %>
-    <%# 画像一覧 %>
-    <div class='post-contents'>
-      <%# お気に入り画像がない場合のダミー %>
-      <% if @posts.blank? %>
-        <P class="dummy-contents">
-          <P class="dummy-text">お気に入りの写真はございません</p>
-          <p class='info-text dummy-info-text'>※ トップページより写真をお気に入り登録できます。</p>
-        </p>
-      <% end %>
-      <%# //投お気に入り画像がない場合のダミー %>
-      <div class='post-grids-container'>
-        <%# 画像一覧 %>
-        <%= render "shared/index", posts: @posts %>
-        <%# /画像一覧 %>
-      </div>
+  <%# 画像一覧 %>
+  <div class='post-contents'>
+    <%# お気に入り画像がない場合のダミー %>
+    <% if @posts.blank? %>
+      <P class="dummy-contents">
+        <P class="dummy-text">お気に入りの写真はございません</p>
+        <p class='info-text dummy-info-text'>※ トップページより写真をお気に入り登録できます。</p>
+      </p>
+    <% end %>
+    <%# //投お気に入り画像がない場合のダミー %>
+    <div class='post-grids-container'>
+      <%# 画像一覧 %>
+      <%= render "shared/index", posts: @posts %>
+      <%# /画像一覧 %>
     </div>
-    <%# //画像一覧 %>
-  <%# ログインしていない場合のダミー %>
-  <% else %>
-    <P class="dummy-contents">
-      <P class="dummy-text">日々の思い出を貼付してみませんか?</p>
-      <p class='info-text dummy-info-text'>※ ご利用になる方は画面右上よりログインしてください。</p>
-    </p>
-    <div class='post-contents dummy-contents'>
-      <div class='post-grids-container'>
-        <%# 画像一覧 %>
-          <%= render "shared/everyone_index", everyone_posts: @everyone_posts %>
-        <%# /画像一覧 %>
-      </div>
-    </div>
-  <% end %>
-  <%# //ログインしていない場合のダミー %>
+  </div>
+  <%# //画像一覧 %>
 </div>

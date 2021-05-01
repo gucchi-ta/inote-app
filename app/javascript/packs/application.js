@@ -14,7 +14,6 @@ require("channels")
 //jsファイルを読み込む
 // require("../img_form")
 require('../preview')
-// require('../show')
 require('../loading')
 require("../hert")
 require("../grobal")

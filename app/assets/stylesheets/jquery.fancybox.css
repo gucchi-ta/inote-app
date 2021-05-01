@@ -179,14 +179,6 @@ body.compensate-for-scrollbar {
     vertical-align: middle;
 }
 
-/* 追記 */
-@media (max-width: 1024px) {
-    .fancybox-content {
-        
-    }
-}
-/* //追記 */
-
 .fancybox-slide--image .fancybox-content {
     animation-timing-function: cubic-bezier(.5, 0, .14, 1);
     -webkit-backface-visibility: hidden;
@@ -332,13 +324,6 @@ body.compensate-for-scrollbar {
 }
 
 
-/* 追記 */
-@media (max-width: 1024px) {
-    .fancybox-button {
-        display: none;
-    }
-}
-/* //追記 */
 
 .fancybox-button,
 .fancybox-button:visited,
@@ -910,3 +895,31 @@ body.compensate-for-scrollbar {
         max-width: calc(100% - 10px);
     }
 }
+
+/* 追記 */
+.fancybox-content {
+  transform: none !important;
+  position: static !important;
+}
+.fancybox-image{
+  height: calc(100% - 88px);
+  width: calc(100% - 3vw);
+  top: 44px;
+  left: 1.5vw;
+  object-fit: contain !important;
+}
+.fancybox-button--zoom{
+  display: none !important;
+}
+@media (max-width: 499px) {
+  .fancybox-image{
+    height: calc(100% - 88px);
+    width: 100%;
+    top: 44px;
+    left: 0;
+  }
+  .fancybox-button--arrow_left,.fancybox-button--arrow_right{
+    display: none;
+  }
+}
+/* //追記 */

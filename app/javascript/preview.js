@@ -11,7 +11,8 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       const blobImage = document.createElement('img');
       blobImage.setAttribute('src', blob);
       blobImage.setAttribute('id', 'preview-img');
-      blobImage.setAttribute('width', '324');
+      // blobImage.setAttribute('width', '324');
+      blobImage.setAttribute('class', 'preview-img');
       // 生成したHTMLの要素をブラウザに表示させる
       imageElement.appendChild(blobImage);
       ImageList.appendChild(imageElement);

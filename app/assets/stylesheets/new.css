@@ -50,3 +50,15 @@
   border: 2px solid #0099e8;
 }
 /* /フォームにフォーカスした際に青い囲み */
+
+.preview-img{
+  width: 324px;
+  height: 324px;
+  object-fit: contain;
+}
+
+@media (max-width: 599px){
+  .preview-img{
+    width: 100%;
+  }
+}

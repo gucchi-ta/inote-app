@@ -882,6 +882,16 @@
 
           self.close(e);
         })
+
+        // 追記
+        // .on("click.fb-close", ".fancybox-bg", function (e) {
+        //   e.stopPropagation();
+        //   e.preventDefault();
+
+        //   self.close(e);
+        // })
+        // //追記
+
         .on("touchstart.fb-prev click.fb-prev", "[data-fancybox-prev]", function (e) {
           e.stopPropagation();
           e.preventDefault();
@@ -5630,3 +5640,17 @@
     }
   });
 })(document, jQuery);
+
+// 追記
+$(document).ready(function() {
+	$('[data-fancybox]').fancybox({
+		// オプションを下記に記載していきます
+		loop : true, // 複数画像表示時に最初と最後をループさせる
+		// toolbar  : false, // ツールバーの非表示
+		// smallBtn : true, // 小さいCloseボタン利用する
+		// iframe : { // iframe 関連の処理 
+		// 	preload : false //iframeのプリロードをしない
+		// }
+	});
+});
+// //追記 ここまで

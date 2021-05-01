@@ -12,13 +12,14 @@ require("@rails/activestorage").start()
 require("channels")
 
 //jsファイルを読み込む
+require("../fade_in")
 // require("../img_form")
 require('../preview')
 // require('../loading')
 require("../hert")
 require("../grobal")
-// require("../grid_index")
-require("../jquery.fancybox.min")
+// require("../jquery.fancybox.min")
+require("../jquery.fancybox")
 require("../left_sp_info")
 require("../grid_index")
 

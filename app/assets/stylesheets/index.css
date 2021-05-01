@@ -392,4 +392,12 @@ li[data-grobal-check="false"] .grobal-off-icon{
 }
 /* //iphone5使用時 */
 
+/* GalaxyFold使用時 */
+@media screen and (max-width: 280px) {
+  .grid{
+    width: 125px;
+  }
+}
+/* //GalaxyFold使用時 */
+
 /* //グリッドサイズ */

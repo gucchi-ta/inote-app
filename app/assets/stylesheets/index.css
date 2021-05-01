@@ -341,22 +341,13 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 /* グリッドサイズ */
 
-/* iPadPro使用時 */
-/* @media screen and (max-width: 1024px) {
+/* iphone12ProMax使用時 */
+@media screen and (max-width: 428px) {
   .grid{
-    width: 231px;
+    width: 195px;
   }
-} */
-/* iPadPro使用時 */
-
-/* iPad使用時 */
-/* @media screen and (max-width: 768px) {
-  .grid{
-    width: 231.6px;
-  }
-} */
-/* iPad使用時 */
-
+}
+/* //iphone12ProMax使用時 */
 
 /* iphone6/7/8Plus使用時 */
 @media screen and (max-width: 414px) {
@@ -366,17 +357,22 @@ li[data-grobal-check="false"] .grobal-off-icon{
 }
 /* //iphone6/7/8Plus使用時 */
 
+/* iphone12使用時 */
+@media screen and (max-width: 390px) {
+  .grid{
+    width: 177px;
+  }
+}
+/* //iphone12使用時 */
 
 /* iphone6/7/8使用時 */
 @media screen and (max-width: 375px) {
   .grid{
     width: 169.7px;
   }
-
 /* //iphone6/7/8使用時 */
 }
 /* Galavy S5使用時 */
-
 @media screen and (max-width: 360px) {
   .grid{
     width: 163px;

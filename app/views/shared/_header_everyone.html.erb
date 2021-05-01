@@ -5,13 +5,18 @@
   <div class="left-sp-info">
     <%= image_tag("arrow_bk.png" , class: "arrow-bk-icon") %>
     <div class="left-sp-info-box">
+      <%= link_to "自分の投稿", "/", class: "my-sp-link", style: "color: #666666; text-decoration: none;" %>
       <%= link_to "お気に入り", favorite_posts_path, class: "favorite-sp-link", style: "color: #666666; text-decoration: none;" %>
       <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
+      <hr color="#666666" class="left-sp-line">
+      <%= link_to "アップロード", new_post_path, class: "upload-sp-link", style: "color: #666666; text-decoration: none;" %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-sp-link", style: "color: #666666; text-decoration: none;" %>
     </div>
   </div>
   <%# //スマホ %>
+  <%= link_to "自分の投稿", "/", class: "my-post-link pc tb", style: "color: #666666; text-decoration: none;" %>
   <%= link_to "お気に入り", favorite_posts_path, class: "favorite-post-link pc tb", style: "color: #666666; text-decoration: none;" %>
-  <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link pc tb", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
+  <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link everyone-post-link-login pc tb", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
   <div class='search-bar-contents'>
     <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
       <%= form.text_field :keyword, placeholder: "検索する", class: "input-box" %>

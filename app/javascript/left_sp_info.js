@@ -6,7 +6,7 @@ $(function() {
       const leftSpInfoBox = document.getElementsByClassName("left-sp-info-box");
       clicked = !clicked;
       if (clicked) {
-        leftSpInfoBox[0].setAttribute("style", "display: block");
+        leftSpInfoBox[0].setAttribute("style", "display: block; display: flex; flex-direction: column; align-items: flex-start;");
       }else {
         leftSpInfoBox[0].setAttribute("style", "display: none");
       }
@@ -15,7 +15,7 @@ $(function() {
       const leftSpNonlogInfoBox = document.getElementsByClassName("left-sp-nonlog-info-box");
       clicked = !clicked;
       if (clicked) {
-        leftSpNonlogInfoBox[0].setAttribute("style", "display: block");
+        leftSpNonlogInfoBox[0].setAttribute("style", "display: block; display: flex; flex-direction: column; align-items: flex-start;");
       }else {
         leftSpNonlogInfoBox[0].setAttribute("style", "display: none");
       }

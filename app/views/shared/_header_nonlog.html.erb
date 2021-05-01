@@ -6,6 +6,9 @@
     <%= image_tag("arrow_bk.png" , class: "arrow-bk-nonlog-icon") %>
     <div class="left-sp-nonlog-info-box">
       <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
+      <hr color="#666666" class="left-sp-line">
+      <%= link_to "ログイン", user_session_path, class: "upload-sp-link", style: "color: #666666; text-decoration: none;" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "upload-sp-link", style: "color: #666666; text-decoration: none;" %>
     </div>
   </div>
   <%# //スマホ %>

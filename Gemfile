@@ -92,6 +92,3 @@ end
 
 # amazon S3を使うため
 gem "aws-sdk-s3", require: false
-
-# data-confirmの見た目を改善
-# gem 'data-confirm-modal'

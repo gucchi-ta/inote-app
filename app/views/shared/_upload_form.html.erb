@@ -1,0 +1,23 @@
+<div class="form-group">
+  <div class="img-select cursor-pointer" onClick="$('#upfile').click()">
+    <a class="img-select-text">画像を選択</a>
+    <%= image_tag 'upload_sp_bk_icon@2x.png',class:"img-select-icon" %>
+  </div>
+  <div class="image-list"id="image-list">
+    <%= image_tag(post_image, id: "preview-img", class: "preview-img", style: "display:none") %>
+    <%# <img src="aa.png" alt onerror="this.onerror = null; this.src='';"/> %>
+  </div>
+  <%= f.file_field :image, style:"display:none;", id:"upfile" %>
+  <% if post.errors.include?(:image) %>
+    <p style="color: red;"><%= post.errors.full_messages_for(:image).first %></p>
+  <% end %>
+</div>
+<div class="form-group">
+  <%= f.text_area :memo, class:"memo-text-area", id:"memo", placeholder:"ひとこと", maxlength:200 %>
+  <% if post.errors.include?(:memo) %>
+    <p style="color: red;"><%= post.errors.full_messages_for(:memo).first %></p>
+  <% end %>
+</div>
+<div class='register-btn'>
+  <%= f.submit "アップロード", id:"img-submit", class:"post-bk-btn" %>
+</div>

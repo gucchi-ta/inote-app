@@ -2,15 +2,17 @@ Rails.application.routes.draw do
   get 'post/index'
   devise_for :users
   root to: 'posts#index'
-  resources :posts, except: [:show] do
+  resources :posts do
     member do
       get 'hert'
       get 'grobal'
+      get 'show_favorite'
+      get 'show_everyone'
     end
     collection do
       get 'everyone'
       get 'search'
-      get 'my_search'
+      get 'search_my'
       get 'favorite'
     end
   end

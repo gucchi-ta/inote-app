@@ -1,4 +1,8 @@
-<%= render "shared/header_everyone" %>
+<% if user_signed_in? %>
+  <%= render "shared/header_everyone", keyword: "" %>
+<% else %>
+  <%= render "shared/header_nonlog", keyword: "" %>
+<% end %>
 <div class='main'>
   <div class='post-contents'>
     <%# 投稿画像がない場合のダミー %>
@@ -11,7 +15,7 @@
     <%# //投稿画像がない場合のダミー %>
     <div class='post-grids-container'>
       <%# 画像一覧 %>
-        <%= render "shared/index_everyone", posts: @posts %>
+      <%= render "shared/index_everyone", posts: @posts %>
       <%# /画像一覧 %>
     </div>
   </div>

@@ -1,9 +1,10 @@
-<% posts.each do |post| %>
-  <div class='grid'>
-    <div class='index-img-content'>
-      <%= render "shared_child/img",post: post %>
+<div class='everyone-grid-container'>
+  <% posts.each do |post| %>
+    <div class='grid'>
+      <div class='index-img-content'>
+        <%= link_to image_tag(post.image, class: "show-index-img"), show_everyone_post_path(post.id) %>
+      </div>
+      <div class="index-memo-content"><%= post.memo.truncate(20, omission: ' ...') %></div>
     </div>
-  </div>
-<% end %>
-
-<div class="sign_modal_wrapper"></div>
+  <% end %>
+</div>

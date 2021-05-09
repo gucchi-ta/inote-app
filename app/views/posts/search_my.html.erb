@@ -1,9 +1,9 @@
-<%= render "shared/header" %>
+<%= render "shared/header", keyword: @keyword %>
 <div class='main'>
   <div class='post-contents'>
     <div class='post-grids-container'>
       <%# 画像一覧 %>
-        <%= render "shared/index", posts: @posts %>
+      <%= render "shared/index", posts: @posts %>
       <%# /画像一覧 %>
     </div>
   </div>

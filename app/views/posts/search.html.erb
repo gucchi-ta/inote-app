@@ -1,9 +1,13 @@
-<%= render "shared/everyone_header" %>
+<% if user_signed_in? %>
+  <%= render "shared/header_everyone", keyword: @keyword %>
+<% else %>
+  <%= render "shared/header_nonlog", keyword: @keyword %>
+<% end %>
 <div class='main'>
   <div class='post-contents'>
     <div class='post-grids-container'>
       <%# 画像一覧 %>
-        <%= render "shared/index_everyone", posts: @posts %>
+      <%= render "shared/index_everyone", posts: @posts %>
       <%# /画像一覧 %>
     </div>
   </div>

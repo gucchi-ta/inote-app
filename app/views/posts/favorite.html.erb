@@ -1,6 +1,5 @@
-<%= render "shared/header_favorite" %>
+<%= render "shared/header_favorite", keyword: "" %>
 <div class='main'>
-  <%# 画像一覧 %>
   <div class='post-contents'>
     <%# お気に入り画像がない場合のダミー %>
     <% if @posts.blank? %>
@@ -9,12 +8,11 @@
         <p class='info-text dummy-info-text'>※ トップページより写真をお気に入り登録できます。</p>
       </p>
     <% end %>
-    <%# //投お気に入り画像がない場合のダミー %>
+    <%# //お気に入り画像がない場合のダミー %>
     <div class='post-grids-container'>
       <%# 画像一覧 %>
-      <%= render "shared/index", posts: @posts %>
+      <%= render "shared/index_favorite", posts: @posts %>
       <%# /画像一覧 %>
     </div>
   </div>
-  <%# //画像一覧 %>
 </div>

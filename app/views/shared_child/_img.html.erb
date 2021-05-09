@@ -1,10 +1,11 @@
 <%# fancyBox3 %>
 <%= link_to post.image, data: {fancybox: "group"}, class: "index-img-content-link" do %>
   <div>
-    <%= image_tag post.image, class: "show-index-img" %>
+    <%= link_to image_tag(post.image, class: "show-index-img"), post_path(post.id) %>
   </div>
 <% end %>
 <%# //fancyBox3 %>
+
 <div class="index-memo">
   <%= post.memo %>
 </div>

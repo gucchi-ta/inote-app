@@ -3,7 +3,6 @@
   margin: 0 auto;
   margin-top: 50px;
 }
-
 .login-bk-btn {
   width: 100%;
   /* background: #ea352d;
@@ -16,7 +15,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
 .login-flash-message {
   text-align: center;
   color: red;

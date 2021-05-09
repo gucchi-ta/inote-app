@@ -1,22 +1,41 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :everyone, :search]
+  before_action :move_to_index, except: [:index, :everyone, :search, :show_everyone]
   def index
-    # @posts = Post.includes(:user).order('created_at DESC')
     @posts = Post.where('user_id LIKE ?', current_user.id.to_s).order('created_at DESC') if user_signed_in?
     @everyone_posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
   end
 
-  # def show
-  #   @post = Post.find(params[:id])
-  # end
+  def favorite
+    @posts = Post.where('user_id LIKE ? and hert LIKE ?', current_user.id.to_s, '1').order('created_at DESC') if user_signed_in?
+  end
+
+  def everyone
+    @posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @post_next = Post.where("id > #{@post.id}").first
+    @post_previous = Post.where("id < #{@post.id}").reverse.first
+  end
+
+  def show_favorite
+    @post = Post.find(params[:id])
+    @post_next = Post.where("user_id = #{current_user.id.to_s}").where("id > #{@post.id.to_s}").where("hert = 1").first
+    @post_previous = Post.where("user_id = #{current_user.id.to_s}").where("id < #{@post.id.to_s}").where("hert = 1").reverse.first
+  end
+
+  def show_everyone
+    @post = Post.find(params[:id])
+    @post_next = Post.where("id > #{@post.id}").where("grobal = 1").first
+    @post_previous = Post.where("id < #{@post.id}").where("grobal = 1").reverse.first
+  end
 
   def new
-    # binding.pry
     @post = Post.new
   end
 
   def create
-    # binding.pry
     @post = Post.new(post_params)
     @post.hert = false
     @post.grobal = false
@@ -31,15 +50,13 @@ class PostsController < ApplicationController
   end
 
   def edit
-    # binding.pry
     @post = Post.find(params[:id])
   end
 
   def update
-    # binding.pry
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to root_path
+      redirect_to post_path(@post)
     else
       render :edit
     end
@@ -52,7 +69,6 @@ class PostsController < ApplicationController
   end
 
   def hert
-    # binding.pry
     post = Post.find(params[:id])
     if post.hert
       post.update(hert: false)
@@ -65,7 +81,6 @@ class PostsController < ApplicationController
   end
 
   def grobal
-    # binding.pry
     post = Post.find(params[:id])
     if post.grobal
       post.update(grobal: false)
@@ -77,22 +92,15 @@ class PostsController < ApplicationController
     render json: { post: item }
   end
 
-  def everyone
-    @posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
-  end
-
   def search
+    @keyword = params[:keyword]
     @posts = Post.search(params[:keyword])
   end
 
-  def my_search
-    # binding.pry
-    post = Post.my_search(params[:keyword])
+  def search_my
+    @keyword = params[:keyword]
+    post = Post.search_my(params[:keyword])
     @posts = post.where('user_id LIKE ?', current_user.id.to_s)
-  end
-
-  def favorite
-    @posts = Post.where('user_id LIKE ? and hert LIKE ?', current_user.id.to_s, '1').order('created_at DESC') if user_signed_in?
   end
 
   private
@@ -104,4 +112,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:memo, :image, :hert, :grobal).merge(user_id: current_user.id)
   end
+
 end

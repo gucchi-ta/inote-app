@@ -1,0 +1,9 @@
+<%# ログインの有無で表示切り替え%>
+  <% if user_signed_in? %>
+    <%= link_to image_tag('upload-icon@2x.png', class: "sp_devise_icon", id: "upload_icon"), new_post_path %>
+    <%= link_to image_tag('logout-icon@2x.png', class: "sp_devise_icon", id: "logout_icon"), destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to image_tag('login-icon@2x.png', class: "sp_devise_icon", id: "login_icon"), user_session_path %>
+    <%= link_to image_tag('signup-icon@2x.png', class: "sp_devise_icon", id: "signup_icon"), new_user_registration_path %>
+  <% end %>
+  <%# //ログインの有無で表示切り替え%>

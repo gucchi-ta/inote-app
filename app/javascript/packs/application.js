@@ -22,6 +22,10 @@ require("../grobal")
 require("../jquery.fancybox")
 require("../left_sp_info")
 require("../grid_index")
+// require("../shuffle")
+require("../header_close")
+require("../show")
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -7,6 +7,7 @@ class Post < ApplicationRecord
 
   # 空の値を登録できないようにバリデーション
   validates :image, presence: true
+  validates :memo , length: { maximum: 200 }
 
   def self.search(search)
     if search != ''
@@ -16,7 +17,7 @@ class Post < ApplicationRecord
     end
   end
 
-  def self.my_search(search)
+  def self.search_my(search)
     if search != ''
       Post.where('memo LIKE(?)', "%#{search}%").order('created_at DESC')
     else

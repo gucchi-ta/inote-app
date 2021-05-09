@@ -1,11 +1,10 @@
 <% if user_signed_in? %>
-  <%= render "shared/header" %>
+  <%= render "shared/header", keyword: "" %>
 <% else %>
-  <%= render "shared/header_nonlog" %>
+  <%= render "shared/header_nonlog", keyword: "" %>
 <% end %>
 <div class='main'>
   <% if user_signed_in? %>
-    <%# 画像一覧 %>
     <div class='post-contents'>
       <%# 投稿画像がない場合のダミー %>
       <% if @posts.where('id >= 1').blank? %>
@@ -21,7 +20,6 @@
         <%# /画像一覧 %>
       </div>
     </div>
-    <%# //画像一覧 %>
   <%# ログインしていない場合のダミー %>
   <% else %>
     <P class="dummy-contents">
@@ -31,7 +29,7 @@
     <div class='post-contents dummy-contents'>
       <div class='post-grids-container'>
         <%# 画像一覧 %>
-          <%= render "shared/index_everyone", posts: @everyone_posts %>
+        <%= render "shared/index_everyone", posts: @everyone_posts %>
         <%# /画像一覧 %>
       </div>
     </div>

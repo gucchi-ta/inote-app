@@ -8,7 +8,6 @@
   cursor: pointer;
   border-radius: 50px;
 }
-
 .memo-text-area{
   margin-top: 5px;
   height: 100px;
@@ -19,26 +18,21 @@
   font-size: 16px;
   resize: none;
 }
-
 .img-select{
   font-size: 14px;
   display: flex;
   justify-content: flex-end;
 }
-
 .img-select-icon{
   height: 40px;
 }
-
 .img-select-text{
-  /* margin-left: 10px; */
   margin-right: 20px;
   color: #3e3a39;
   padding-top: 13px;
   font-family: "游教科書体 横用";
   font-size: 15px;
 }
-
 .image-list{
   margin-top: 15px;
 }
@@ -47,16 +41,24 @@
 .memo-text-area:focus{
   outline: 0;
   box-shadow: none;
-  border: 2px solid #0099e8;
+  /* border: 1px solid #0099e8; */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: 0.5s;
 }
-/* /フォームにフォーカスした際に青い囲み */
+/* //フォームにフォーカスした際に青い囲み */
+
+/* ホバーした時に透過 */
+.img-select:hover {
+  opacity: 0.4;
+  transition: 0.5s;
+}
+/* //ホバーした時に透過 */
 
 .preview-img{
   width: 324px;
   height: 324px;
   object-fit: contain;
 }
-
 @media (max-width: 599px){
   .preview-img{
     width: 100%;

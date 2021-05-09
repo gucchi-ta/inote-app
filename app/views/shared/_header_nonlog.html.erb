@@ -1,25 +1,22 @@
 <header class='top-page-header'>
-  <%= link_to image_tag("inote_logo.png", class: "inote-icon pc"), "/" %>
-  <%= link_to image_tag("inote_sp_logo.png", class: "inote-icon tb sp"), "/" %>
-  <%# スマホ %>
-  <div class="left-sp-info">
-    <%= image_tag("arrow_bk.png" , class: "arrow-bk-nonlog-icon") %>
-    <div class="left-sp-nonlog-info-box">
-      <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-sp-link", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
-      <hr color="#666666" class="left-sp-line">
-      <%= link_to "ログイン", user_session_path, class: "upload-sp-link", style: "color: #666666; text-decoration: none;" %>
-      <%= link_to "新規登録", new_user_registration_path, class: "upload-sp-link", style: "color: #666666; text-decoration: none;" %>
-    </div>
+  <%= link_to image_tag("inote-logo@2x.png", class: "inote-icon"), "/" %>
+  <%= link_to image_tag("inote-sp-logo@2x.png", class: "inote-sp-icon"), "/" %>
+  <div class ="post-link-box">
+    <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link", style: "color: white; text-decoration: none; background-color: #3E3A39;" %>
   </div>
-  <%# //スマホ %>
-  <%= link_to "みんなの投稿", everyone_posts_path, class: "everyone-post-link  pc tb", style: "color: white; text-decoration: none; background-color: #3e3a39;" %>
   <div class='search-bar-nonlogin-contents'>
     <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
-      <%= form.text_field :keyword, placeholder: "検索する", class: "input-box" %>
-      <button class="search-button">
-        <%= image_tag "search_icon.png", class:"search-icon" %>
-      </button>
+      <%= render "shared_child/search_form", form: form, keyword: keyword %>
     <% end %>
   </div>
   <%= render "shared_child/header_icon" %>
+</header>
+
+<header class='sp-top-page-header'>
+  <div class='sp_search-bar-contents'>
+    <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
+      <%= render "shared_child/search_form", form: form, keyword: keyword %>
+    <% end %>
+  </div>
+  <%= render "shared_child/header_sp_icon" %>
 </header>

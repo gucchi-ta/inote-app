@@ -1,11 +1,9 @@
-<%= render "shared/second_header" %>
-<%= form_with model: @post, url: posts_path, class: 'registration-main', local: true do |f| %>
+<%= render "shared/second_header", keyword: "" %>
+<%= form_with model: @post, url: posts_path, class: 'registration-main', autocomplete: "off", local: true do |f| %>
   <div class='form-wrap'>
     <div class='form-header'>
-      <h1 class='form-header-text'>
-        投稿
-      </h1>
+      <h1 class='form-header-text'>投稿</h1>
     </div>
-    <%= render "shared/form", f: f %>
+    <%= render "shared/upload_form", f: f, post: @post, post_image: "" %>
   </div>
 <% end %>

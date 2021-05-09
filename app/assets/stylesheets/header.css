@@ -38,6 +38,7 @@
 .inote-sp-icon {
   width: 54px;
   border-radius: 50%;
+  margin-right: 14px;
 }
 .inote-sp-icon:hover {
   background-color: #f3f3f3;
@@ -85,13 +86,11 @@
 .search-bar-contents {
   display: flex;
   align-items: center;
-  margin-left: 12px;
   height: 54px;
 }
 .search-bar-nonlogin-contents {
   display: flex;
   align-items: center;
-  margin-left: 12px;
   height: 54px;
 }
 .search-form {
@@ -108,18 +107,19 @@
   border: none;
   border-radius: 50px 0 0 50px;
   font-size: 17px;
+  margin-left: 12px;
 }
 .search-bar-contents .search-form .search-text-box {
-  width: calc(100vw - 6vw - 717px - 14px + 106px);
+  width: calc(100vw - 6vw - 54px -  14px - 308px - 12px - 4px - 75px - 14px - 64px - 14px - 52px);
 }
 .search-bar-nonlogin-contents .search-form .search-text-box {
-  width: calc(100vw - 6vw - 513px - 14px + 106px);
+  width: calc(100vw - 6vw - 54px -  14px - 112px - 12px - 4px - 75px - 14px - 42px - 14px - 42px);
 }
 /* .search-text-box:hover {
   background-color: #FAFAFA;
   transition: 0.5s;
 } */
-.search-text-box:focus, .search-text-box:focus ~ .search-button {
+.search-text-box:focus{
   outline: 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: 0.5s;
@@ -202,14 +202,12 @@
 .sp_search-bar-contents {
   display: flex;
   align-items: center;
-  margin-left: 12px;
   height: 54px;
 }
-.sp_search-bar-contents .search-form .search-text-box {
-  width: calc(100vw - 6vw - 175px - 14px);
-}
-.sp_search-bar-nonlogin-contents .search-form .search-text-box {
-  width: calc(100vw - 6vw - 175px - 14px);
+.sp_search-bar-nonlogin-contents {
+  display: flex;
+  align-items: center;
+  height: 54px;
 }
 .sp_devise_icon{
   height: 36px;
@@ -232,10 +230,10 @@
   .inote-icon { display: none !important; }
   .inote-sp-icon { display: block !important; }
   .search-bar-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 563px - 14px);
+    width: calc(100vw - 6vw - 54px -  14px - 308px - 12px - 4px - 27px - 14px - 64px - 14px - 52px);
   }
   .search-bar-nonlogin-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 335px - 14px);
+    width: calc(100vw - 6vw - 54px -  14px - 112px - 12px - 4px - 27px - 14px - 42px - 14px - 42px);
   }
   .search-icon {
     display: none;
@@ -254,8 +252,21 @@
   .search-bar-nonlogin-contents { display: none !important; }
   .sp-nav { display: block !important; }
   .sp-top-page-header{display: none; }
-  .post-link-box { margin: 0 auto 0 0; }
-
+  .post-link-box { 
+    margin: 0 auto 0 0; 
+  }
+  .inote-sp-icon {
+    margin: 0;
+  }
+  .search-text-box {
+    margin: 0;
+  }
+  .sp_search-bar-contents .search-form .search-text-box {
+    width: calc(100vw - 6vw - 4px - 27px - 14px - 64px - 14px - 52px);
+  }
+  .sp_search-bar-nonlogin-contents .search-form .search-text-box {
+    width: calc(100vw - 6vw - 4px - 27px - 14px - 42px - 14px - 42px);
+  }
 }
 @media (max-width: 449px) {
   .inote-sp-icon {
@@ -285,10 +296,10 @@
     margin-left: 10px;
   }
   .sp_search-bar-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 156.11px - 14px);
+    width: calc(100vw - 6vw - 4px - 27px - 10px - 56.89px - 10px - 46.22px);
   }
   .sp_search-bar-nonlogin-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 156.11px - 14px);
+    width: calc(100vw - 6vw - 4px - 27px - 10px - 37.33px - 10px - 37.33px);
   }
   /* .post-link-box {
     margin: 0 auto  0 0;
@@ -323,10 +334,10 @@
     margin-left: 10px;
   }
   .sp_search-bar-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 141.22px - 14px);
+    width: calc(100vw - 6vw - 4px - 27px - 10px - 49.78px - 10px - 40.44px);
   }
   .sp_search-bar-nonlogin-contents .search-form .search-text-box {
-    width: calc(100vw - 6vw - 141.22px - 14px);
+    width: calc(100vw - 6vw - 4px - 27px - 10px - 32.67px - 10px - 32.67px);
   }
 }
 @media (max-width: 320px) {

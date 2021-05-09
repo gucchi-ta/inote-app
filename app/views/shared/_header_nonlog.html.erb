@@ -13,7 +13,7 @@
 </header>
 
 <header class='sp-top-page-header'>
-  <div class='sp_search-bar-contents'>
+  <div class='sp_search-bar-nonlogin-contents'>
     <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |form| %>
       <%= render "shared_child/search_form", form: form, keyword: keyword %>
     <% end %>

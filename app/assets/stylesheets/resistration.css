@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   height: 100vh;  /* 非同期の際は変更 */
-  margin-top: 160px;
+  /* margin-top: 160px; */
 }
 .form-wrap {
   width: 650px;

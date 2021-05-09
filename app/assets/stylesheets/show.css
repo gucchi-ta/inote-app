@@ -1,6 +1,6 @@
 .post-show-hidden ~ .top-page-header{
   /* box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .04); */
-  border: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
   /* visibility: hidden; */
 }
 .show-main{

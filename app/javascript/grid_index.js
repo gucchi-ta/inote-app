@@ -147,7 +147,7 @@ function setPosition(grid) {
 
 // レスポンシブ時のgridのwidthを更新
 function responsiveGrid() {
-  if (window.matchMedia('(max-width: 280px)').matches) {
+  if (window.matchMedia('(max-width: 279px)').matches) {
     $('.grid').css({
       'width': ($(window).width() - (7 * 2))
     });

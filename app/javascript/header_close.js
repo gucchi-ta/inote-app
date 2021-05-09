@@ -81,10 +81,12 @@ $(function() {
 $(function() {
   $('.sp-nav').clickToggle(function () {
     // １回目のクリック
-    $('.sp-top-page-header').css({'display': 'flex','align-items': 'center'})
+    // $('.sp-top-page-header').css({'display': 'flex'})
+    $('.sp-top-page-header').css('display', 'none')
   }, function () {
     // ２回目のクリック
-    $('.sp-top-page-header').css('display', 'none')
+    // $('.sp-top-page-header').css('display', 'none')
+    $('.sp-top-page-header').css({'display': 'flex'})
   });
 });
 // //sp-headerを表示/非表示

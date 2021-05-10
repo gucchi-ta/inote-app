@@ -59,6 +59,7 @@ function showResize() {
       'left': showLeft,
       'bottom': showMemoBottom,
       'top': 'auto',
+      'padding-bottom': 0,
       'visibility': 'visible'
     });
   } else {
@@ -67,6 +68,7 @@ function showResize() {
       'left': showBoxMarginLeft,
       'bottom': 'auto',
       'top': showIconBoxTop2,
+      'padding-bottom': 80,
       'visibility': 'visible'
     });
   }

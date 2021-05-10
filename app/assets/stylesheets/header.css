@@ -249,7 +249,7 @@
   .devise_icon { display: none !important; }
   .search-bar-contents { display: none !important; }
   .search-bar-nonlogin-contents { display: none !important; }
-  .sp-nav { display: block !important; }
+  /* .sp-nav { display: block !important; } */
   .sp-top-page-header{display: flex; }
   .post-link-box { 
     margin: 0 auto 0 0; 

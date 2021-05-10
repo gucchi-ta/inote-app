@@ -3,11 +3,16 @@
 $(window).on('load scroll', function() {
   $(".show-img").css('width', 'auto');
   $(".show-img").css('height', 'auto');
-  showResize();
+  $(".show-memo").css({'visibility': 'hidden'});
+  $(".show-icon-box").css({'visibility': 'hidden'});
+  // 差し替えダミー画像を先に読み込むためにdelay
+  setTimeout(function(){
+    showResize();
+  }, 30);
   $(window).resize(function() {
-      $(".show-img").css('width', 'auto');
-      $(".show-img").css('height', 'auto');
-      showResize();
+    $(".show-img").css('width', 'auto');
+    $(".show-img").css('height', 'auto');
+    showResize();
   });
 });
 
@@ -18,6 +23,7 @@ function showResize() {
   var showBoxHeight = $(".show-box").height();
   var windowWidth = $(window).width();
   
+  // 画像を要素いっぱいで内接リサイズ
   if ((showImgHeight / showImgWidth) <= (showBoxHeight / showBoxWidth)){
     $(".show-img").css('width', '100%');
     $(".show-img").css('height', 'auto');
@@ -32,12 +38,12 @@ function showResize() {
   var showLeft =  showImgWidth + showBoxMarginLeft + 28
   var showBoxMarginBottom = (showBoxHeight - showImgHeight) / 2
   var showMemoBottom =  showBoxMarginBottom
-  // var showMemoBottom2 = showBoxMarginBottom - showMemoheight + 16 - 28
   var windowMargin = (windowWidth - showImgWidth) / 2
 
   var showIconBoxTop =  showBoxMarginBottom
   var showIconBoxTop2 =  showBoxMarginBottom + showImgHeight + 14
 
+  // メモの比較用最大幅を先に指定
   $(".show-memo").css({
     'max-width' : windowMargin - windowWidth * 0.01 - 28
   });
@@ -50,7 +56,7 @@ function showResize() {
     var showMemoWidthJudge = showImgWidth - 144
   }
 
-  // メモ
+  // メモ配置
   if ((windowMargin > showMemoWidth + 28) 
   && (windowMargin > 26 + 28 + windowWidth * 0.01) 
   && ((showMemoheight < showImgHeight - 144) && (showMemoheight < showImgHeight * 0.45))){
@@ -73,7 +79,7 @@ function showResize() {
     });
   }
 
-  // アイコン
+  // アイコン配置
   if ((windowMargin > showMemoWidth + 28) 
   && (windowMargin > 26 + 28 + windowWidth * 0.01) 
   && ((showMemoheight < showImgHeight - 144) && (showMemoheight < showImgHeight * 0.45))){
@@ -81,7 +87,7 @@ function showResize() {
       'left': showLeft,
       'right': 'auto',
       'top': showIconBoxTop,
-      // 'visibility': 'visible'
+      'visibility': 'visible'
     });
     $(".show-icon-list").css({
       'display': 'block'
@@ -95,7 +101,7 @@ function showResize() {
       'left': 'auto',
       'right': showBoxMarginLeft,
       'top': showIconBoxTop2,
-      // 'visibility': 'visible'
+      'visibility': 'visible'
     });
     $(".show-icon").css({
       'margin-bottom': '0',
@@ -109,7 +115,7 @@ function showResize() {
     });
   }
 
-  // アイコン情報
+  // アイコン情報配置
   if ((windowMargin > showMemoWidth + 28) 
   && (windowMargin > 26 + 28 + windowWidth * 0.01) 
   && ((showMemoheight < showImgHeight - 144) && (showMemoheight < showImgHeight * 0.45))

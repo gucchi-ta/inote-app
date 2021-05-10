@@ -1,7 +1,10 @@
 // $(function() {
 // 画像読み込み完了後に実行
 $(window).on('load scroll', function() {
-  allFunction();
+  // 差し替えダミー画像を先に読み込むためにdelay
+  setTimeout(function(){
+    allFunction();
+  }, 50);
   // winObject.unbind('resize').resize(function() {
   //   allFunction();
   // });
@@ -23,9 +26,7 @@ var gridArray = [],
 function allFunction() {
   elements = $('.post-grids-container');
   winObject = $(window);
-
   responsiveGrid();
-
   var containerWidth;
   // var winWidth = winObject.width() - offsetX * 2;
   var winWidth = winObject.width();
@@ -36,7 +37,6 @@ function allFunction() {
       setCol();
       containerWidth =  colWidth * (numOfCol + 1);
   }
-  
   var current = elements.width();
   setCol();
   applyPinterestGrid();

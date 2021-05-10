@@ -25,6 +25,7 @@ require("../grid_index")
 // require("../shuffle")
 require("../header_close")
 require("../show")
+require("../dummy")
 
 
 

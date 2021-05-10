@@ -3,7 +3,7 @@
 <div class="show-main fade-in-display">
   <div class="post-show">
     <div class="show-box">
-      <%= image_tag @post.image ,class:"show-img " %>
+      <%= image_tag @post.image ,class:"show-img", alt: "" %>
       <div class="show-memo"><p class="show-memo-day"><%= @post.created_at.year %>.<%= @post.created_at.mon %>.<%= @post.created_at.day %></p><p class="show-memo-content"><%= @post.memo %></p></div>
       <%= render "shared/show_icon_box", post: @post %>
     </div>

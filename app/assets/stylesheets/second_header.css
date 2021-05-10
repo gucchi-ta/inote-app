@@ -12,9 +12,9 @@
   z-index: 1;
 }
 .inote-second-icon {
-  /* width: 160px; */
-  width: 54px;
+  height: 54px;
   border-radius: 50%;
+  /* height: 40px; */
 }
 .inote-second-icon:hover {
   background-color: #f3f3f3;

@@ -8,7 +8,7 @@ class Post < ApplicationRecord
 
   # 空の値を登録できないようにバリデーション
   validates :image, presence: true
-  validates :memo , length: { maximum: 200 }
+  validates :memo, length: { maximum: 200 }
 
   def self.search(search)
     if search != ''

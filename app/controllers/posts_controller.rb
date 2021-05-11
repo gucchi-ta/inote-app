@@ -18,29 +18,25 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     unless @post.user_id == current_user.id
       redirect_to root_path
-      return
     end
-    @post_next = Post.where("id > #{@post.id}").where("user_id = #{current_user.id.to_s}").first
-    @post_previous = Post.where("id < #{@post.id}").where("user_id = #{current_user.id.to_s}").reverse.first    
+    @post_next = Post.where("id > #{@post.id}").where("user_id = #{current_user.id}").first
+    @post_previous = Post.where("id < #{@post.id}").where("user_id = #{current_user.id}").reverse.first
   end
 
   def show_favorite
     @post = Post.find(params[:id])
-    @favorite = @post.favorites.where("user_id = #{current_user.id.to_s}")
+    @favorite = @post.favorites.where("user_id = #{current_user.id}")
     unless @favorite.present?
       if Post.where('user_id LIKE ?', current_user.id.to_s).where('id LIKE ?', params[:id]).present?
         redirect_to post_path(params[:id])
-        return
       elsif Post.where('id LIKE ?', params[:id]).where('grobal LIKE ?', '1').present?
         redirect_to show_everyone_post_path(params[:id])
-        return
       else
         redirect_to root_path
-        return
       end
     end
-    @favorite_next = Favorite.where("user_id = #{current_user.id.to_s}").where("id > #{@favorite[0].id.to_s}").first
-    @favorite_previous = Favorite.where("user_id = #{current_user.id.to_s}").where("id < #{@favorite[0].id.to_s}").reverse.first
+    @favorite_next = Favorite.where("user_id = #{current_user.id}").where("id > #{@favorite[0].id}").first
+    @favorite_previous = Favorite.where("user_id = #{current_user.id}").where("id < #{@favorite[0].id}").reverse.first
   end
 
   def show_everyone
@@ -50,11 +46,10 @@ class PostsController < ApplicationController
         redirect_to post_path(params[:id])
       else
         redirect_to everyone_posts_path
-        return
       end
     end
-    @post_next = Post.where("id > #{@post.id}").where("grobal = 1").first
-    @post_previous = Post.where("id < #{@post.id}").where("grobal = 1").reverse.first
+    @post_next = Post.where("id > #{@post.id}").where('grobal = 1').first
+    @post_previous = Post.where("id < #{@post.id}").where('grobal = 1').reverse.first
   end
 
   def new
@@ -120,14 +115,12 @@ class PostsController < ApplicationController
   end
 
   def show_redirect
-    unless Post.where('id LIKE ?', params[:id]).present? && user_signed_in? 
+    unless Post.where('id LIKE ?', params[:id]).present?
       redirect_to root_path
-      return
     end
   end
 
   def post_params
     params.require(:post).permit(:memo, :image, :grobal).merge(user_id: current_user.id)
   end
-
 end

@@ -1,23 +1,25 @@
 class FavoritesController < ApplicationController
-
   # createは非同期で実装できていないのでリダイレクトで仮実装
   def create
     # paramsにidを追加したかったけどjs.erbには渡せてないのか？
     # params[:id] = params[:post_id]
     @post = Post.find(params[:post_id])
     favorite = current_user.favorites.build(post_id: params[:post_id])
-    favorite.save
+    # いいねの重複チェック・重複していない場合のみ保存
+    unless current_user.favorites.exists?(post_id: params[:post_id])
+      favorite.save
+    end
 
     # 遷移元に合わせてリダイレクト
-    if request.referer&.include?("show_favorite")
+    if request.referer&.include?('show_favorite')
       redirect_to show_favorite_post_path(params[:post_id])
-      return
-    elsif request.referer&.include?("show_everyone")
+      # break
+    elsif request.referer&.include?('show_everyone')
       redirect_to show_everyone_post_path(params[:post_id])
-      return
+      # break
     else
       redirect_to post_path(params[:post_id])
-      return
+      # break
     end
   end
 
@@ -31,7 +33,7 @@ class FavoritesController < ApplicationController
 
   private
 
-  def  favorite_params
+  def favorite_params
     params.merge(id: params[:post_id])
   end
 end

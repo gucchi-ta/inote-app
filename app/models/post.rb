@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   # アソシエーション
   belongs_to :user
+  has_many :favorites, dependent: :destroy
 
   # 画像ファイルを紐付け
   has_one_attached :image

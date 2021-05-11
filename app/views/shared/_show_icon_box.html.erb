@@ -15,16 +15,14 @@
         <% end %>
       </li>
       <p class="icon-info icon-info-grobal">公開設定</p>
-      <li class="hert-icon-box cursor-pointer" data-hert-id=<%= post.id %> data-hert-check=<%= post.hert %>>
-        <% if post.hert == true %>
-          <%= image_tag("hert-on-icon@2x.png",class: " show-icon hert-icon hert-on-icon", id: "hert-on-icon") %>
-          <%= image_tag("hert-off-icon@2x.png",class: "show-icon hert-icon hert-off-icon", id: "hert-off-icon") %>
-        <% elsif post.hert == false %>
-          <%= image_tag("hert-off-icon@2x.png",class: " show-icon hert-icon hert-off-icon", id: "hert-off-icon") %>
-          <%= image_tag("hert-on-icon@2x.png",class: " show-icon hert-icon hert-on-icon", id: "hert-on-icon") %>
-        <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+      <li class="favorite-icon-box cursor-pointer" id="favorite-icon-box">
+        <%= render "shared_child/favorite_icon", post: post %>
       </li>
-      <p class="icon-info icon-info-hert">お気に入り</p>
+      <p class="icon-info icon-info-favorite">お気に入り</p>
+    <% end %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
       <li class="delete-icon-box">
         <%= link_to image_tag("delete-icon@2x.png",class: "show-icon delete-icon"), post_path(post.id), method: :delete, data: { confirm: 'このアプリケーション上から画像を削除してもよろしいですか？' }, title: '削除確認' %>
       </li>

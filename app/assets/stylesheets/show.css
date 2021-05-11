@@ -115,20 +115,6 @@
   transition: 0.5s;
 }
 /* //アイコン */
-/* お気に入りアイコン */
-li[data-hert-check="true"] .hert-off-icon{
-  display: none;
-}
-li[data-hert-check="true"] .hert-on-icon{
-  display: inline;
-}
-li[data-hert-check="false"] .hert-on-icon{
-  display: none;
-}
-li[data-hert-check="false"] .hert-off-icon{
-  display: inline;
-}
-/* //お気に入りアイコン */
 /* 公開/非公開アイコン */
 li[data-grobal-check="true"] .grobal-off-icon{
   display: none;
@@ -154,7 +140,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
   background-color: #3E3A39;
   position: absolute;
 }
-.icon-info-edit, .icon-info-grobal, .icon-info-hert, .icon-info-delete {
+.icon-info-edit, .icon-info-grobal, .icon-info-favorite, .icon-info-delete {
   opacity: 0;
   transition: 0.2s;
 }
@@ -164,7 +150,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 .icon-info-grobal {
   width: 72px;
 }
-.icon-info-hert {
+.icon-info-favorite {
   width: 84px;
 }
 .icon-info-delete {
@@ -174,7 +160,7 @@ li[data-grobal-check="false"] .grobal-off-icon{
 
 .edit-icon-box:hover ~ .icon-info-edit,
 .grobal-icon-box:hover ~ .icon-info-grobal,
-.hert-icon-box:hover ~ .icon-info-hert,
+.favorite-icon-box:hover ~ .icon-info-favorite,
 .delete-icon-box:hover ~ .icon-info-delete {
   opacity: 1;
   transition: 0.5s;

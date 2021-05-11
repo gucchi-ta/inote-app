@@ -1,11 +1,11 @@
-function hert() {
-  const herts = document.querySelectorAll(".hert-icon-box");
+function favorite() {
+  const favorites = document.querySelectorAll(".favorite-icon-box");
   // 取得した要素それぞれに対して関数実行
-  herts.forEach(function (aHert) {
-    aHert.addEventListener("click", () => { 
-      const hertId = aHert.getAttribute("data-hert-id");
+  favorites.forEach(function (afavorite) {
+    afavorite.addEventListener("click", () => { 
+      const favoriteId = afavorite.getAttribute("data-favorite-id");
       const XHR = new XMLHttpRequest();
-      XHR.open("GET", `/posts/${hertId}/hert`, true);
+      XHR.open("GET", `/posts/${favoriteId}/favorite`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
@@ -15,15 +15,15 @@ function hert() {
         }
         // console.log(XHR.response);
         const item = XHR.response.post;
-        // 更新されたhertの真偽で"data-hert-check"属性の値を変更し、それぞれの場合で画像のCSSをdisplay:noneかdisplay:blockに設定
-        if (item.hert === true) {
-          aHert.setAttribute("data-hert-check", "true");
+        // 更新されたfavoriteの真偽で"data-favorite-check"属性の値を変更し、それぞれの場合で画像のCSSをdisplay:noneかdisplay:blockに設定
+        if (item.favorite === true) {
+          afavorite.setAttribute("data-favorite-check", "true");
 
-        } else if (item.hert === false) {
-          aHert.setAttribute("data-hert-check", "false");
+        } else if (item.favorite === false) {
+          afavorite.setAttribute("data-favorite-check", "false");
         }
       };
     });
   });
 }
-window.addEventListener("load", hert);
+window.addEventListener("load", favorite);

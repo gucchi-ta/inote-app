@@ -3,15 +3,15 @@
 <div class="show-main fade-in-display">
   <div class="post-show">
     <div class="show-box">
-      <%= image_tag @post.image ,class:"show-img", alt: "" %>
+      <%= image_tag @post.image, class:"show-img", alt: "" %>
       <div class="show-memo"><p class="show-memo-day"><%= @post.created_at.year %>.<%= @post.created_at.mon %>.<%= @post.created_at.day %></p><p class="show-memo-content"><%= @post.memo %></p></div>
       <%= render "shared/show_icon_box", post: @post %>
     </div>
   </div>
-  <% if @post_next.present? %>
-    <%= link_to image_tag("arrow-left-box@2x.png", size:"100x100",class:"arrow-left-box"), show_favorite_post_path(@post_next.id) %>
+  <% if @favorite_next.present? %>
+    <%= link_to image_tag("arrow-left-box@2x.png", size:"100x100",class:"arrow-left-box"), show_favorite_post_path(@favorite_next.post.id) %>
   <% end %>
-  <% if @post_previous.present? %>
-    <%= link_to image_tag("arrow-right-box@2x.png", size:"100x100",class:"arrow-right-box"), show_favorite_post_path(@post_previous.id) %>
+  <% if @favorite_previous.present? %>
+    <%= link_to image_tag("arrow-right-box@2x.png", size:"100x100",class:"arrow-right-box"), show_favorite_post_path(@favorite_previous.post.id) %>
   <% end %>
 </div>

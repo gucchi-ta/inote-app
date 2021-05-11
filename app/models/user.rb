@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   # アソシエーション
   has_many :posts, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   # 空のデータを保存できないようバリデーション
   validates :nickname, presence: true, length: { maximum: 6 }

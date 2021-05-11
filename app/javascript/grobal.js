@@ -15,7 +15,7 @@ function grobal() {
         }
         // console.log(XHR.response);
         const item = XHR.response.post;
-        // 更新されたhertの真偽で"data-grobal-check"属性の値を変更し、それぞれの場合で画像のCSSをdisplay:noneかdisplay:blockに設定
+        // 更新されたgrobalの真偽で"data-grobal-check"属性の値を変更し、それぞれの場合で画像のCSSをdisplay:noneかdisplay:blockに設定
         if (item.grobal === true) {
           aGrobal.setAttribute("data-grobal-check", "true");
 

@@ -41,7 +41,8 @@ Things you may want to cover:
 
 ### association
 - has_many :posts
-- has_many :albums
+- has_many :favorites
+<!-- - has_many :albums -->
 
 
 <!-- 画像情報のテーブル -->
@@ -50,11 +51,25 @@ Things you may want to cover:
 | ------------------- | ---------- | ----------------------------- |
 | image               | string     | null:false                    |
 | memo                | text       | null:false                    |
+| grobal              | boolean    | null:false                    |
 | user                | references | null:false, foreign_key: true |
 
 ### association
 - belongs_to :user
-- has_many :albums, throgh : post_alum_relations
+- has_many :favorites
+<!-- - has_many :albums, throgh : post_alum_relations -->
+
+
+<!-- お気にいり情報のテーブル -->
+## favoriteテーブル
+| Column              | Type       | Options                       |
+| ------------------- | ---------- | ----------------------------- |
+| post                | references | null:false, foreign_key: true |
+| user                | references | null:false, foreign_key: true |
+
+### association
+- belongs_to :user
+- belongs_to :post
 
 
 <!-- アルバム情報のテーブル -->

@@ -1,12 +1,13 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :everyone, :search, :show_everyone]
+  before_action :show_redirect, only: [:show, :show_favorite, :show_everyone]
   def index
     @posts = Post.where('user_id LIKE ?', current_user.id.to_s).order('created_at DESC') if user_signed_in?
     @everyone_posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
   end
 
   def favorite
-    @posts = Post.where('user_id LIKE ? and hert LIKE ?', current_user.id.to_s, '1').order('created_at DESC') if user_signed_in?
+    @posts = Favorite.where('user_id LIKE ?', current_user.id.to_s).order('created_at DESC') if user_signed_in?
   end
 
   def everyone
@@ -15,18 +16,43 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post_next = Post.where("id > #{@post.id}").first
-    @post_previous = Post.where("id < #{@post.id}").reverse.first
+    unless @post.user_id == current_user.id
+      redirect_to root_path
+      return
+    end
+    @post_next = Post.where("id > #{@post.id}").where("user_id = #{current_user.id.to_s}").first
+    @post_previous = Post.where("id < #{@post.id}").where("user_id = #{current_user.id.to_s}").reverse.first    
   end
 
   def show_favorite
     @post = Post.find(params[:id])
-    @post_next = Post.where("user_id = #{current_user.id.to_s}").where("id > #{@post.id.to_s}").where("hert = 1").first
-    @post_previous = Post.where("user_id = #{current_user.id.to_s}").where("id < #{@post.id.to_s}").where("hert = 1").reverse.first
+    @favorite = @post.favorites.where("user_id = #{current_user.id.to_s}")
+    unless @favorite.present?
+      if Post.where('user_id LIKE ?', current_user.id.to_s).where('id LIKE ?', params[:id]).present?
+        redirect_to post_path(params[:id])
+        return
+      elsif Post.where('id LIKE ?', params[:id]).where('grobal LIKE ?', '1').present?
+        redirect_to show_everyone_post_path(params[:id])
+        return
+      else
+        redirect_to root_path
+        return
+      end
+    end
+    @favorite_next = Favorite.where("user_id = #{current_user.id.to_s}").where("id > #{@favorite[0].id.to_s}").first
+    @favorite_previous = Favorite.where("user_id = #{current_user.id.to_s}").where("id < #{@favorite[0].id.to_s}").reverse.first
   end
 
   def show_everyone
     @post = Post.find(params[:id])
+    if @post.grobal == false
+      if @post.user_id == current_user.id
+        redirect_to post_path(params[:id])
+      else
+        redirect_to everyone_posts_path
+        return
+      end
+    end
     @post_next = Post.where("id > #{@post.id}").where("grobal = 1").first
     @post_previous = Post.where("id < #{@post.id}").where("grobal = 1").reverse.first
   end
@@ -37,11 +63,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.hert = false
     @post.grobal = false
     if @post.valid?
-      # @post.save(hert: false)
-      # @post.save(grobal: false)
       @post.save
       redirect_to root_path
     else
@@ -68,18 +91,6 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def hert
-    post = Post.find(params[:id])
-    if post.hert
-      post.update(hert: false)
-    else
-      post.update(hert: true)
-    end
-
-    item = Post.find(params[:id])
-    render json: { post: item }
-  end
-
   def grobal
     post = Post.find(params[:id])
     if post.grobal
@@ -87,7 +98,6 @@ class PostsController < ApplicationController
     else
       post.update(grobal: true)
     end
-
     item = Post.find(params[:id])
     render json: { post: item }
   end
@@ -109,8 +119,15 @@ class PostsController < ApplicationController
     redirect_to action: :index unless user_signed_in?
   end
 
+  def show_redirect
+    unless Post.where('id LIKE ?', params[:id]).present? && user_signed_in? 
+      redirect_to root_path
+      return
+    end
+  end
+
   def post_params
-    params.require(:post).permit(:memo, :image, :hert, :grobal).merge(user_id: current_user.id)
+    params.require(:post).permit(:memo, :image, :grobal).merge(user_id: current_user.id)
   end
 
 end

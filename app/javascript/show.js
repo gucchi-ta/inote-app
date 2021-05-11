@@ -132,7 +132,7 @@ function showResize() {
       'top': '31px',
       'bottom': 'auto'
     });
-    $(".icon-info-hert").css({
+    $(".icon-info-favorite").css({
       'left': '32px',
       'right': 'auto',
       'top': '61px',
@@ -159,7 +159,7 @@ function showResize() {
       'top': '31px',
       'bottom': 'auto'
     });
-    $(".icon-info-hert").css({
+    $(".icon-info-favorite").css({
       'left': 'auto',
       'right': '32px',
       'top': '61px',
@@ -184,7 +184,7 @@ function showResize() {
       'top': 'auto',
       'bottom': '32px'
     });
-    $(".icon-info-hert").css({
+    $(".icon-info-favorite").css({
       'left': '43px',
       'right': 'auto',
       'top': 'auto',
@@ -209,7 +209,7 @@ function showResize() {
       'top': '32px',
       'bottom': 'auto'
     });
-    $(".icon-info-hert").css({
+    $(".icon-info-favorite").css({
       'left': '43px',
       'right': 'auto',
       'top': '32px',

@@ -3,8 +3,8 @@
 $(window).on('load scroll', function() {
   $(".show-img").css('width', 'auto');
   $(".show-img").css('height', 'auto');
-  $(".show-memo").css({'visibility': 'hidden'});
-  $(".show-icon-box").css({'visibility': 'hidden'});
+  // $(".show-memo").css({'visibility': 'hidden'});
+  // $(".show-icon-box").css({'visibility': 'hidden'});
   // 差し替えダミー画像を先に読み込むためにdelay
   setTimeout(function(){
     showResize();

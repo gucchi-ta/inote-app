@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
   resources :posts do
-    resources :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]  # resourceは単数形
     member do
       get 'grobal'
       get 'show_favorite'

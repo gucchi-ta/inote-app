@@ -17,7 +17,7 @@
       <p class="icon-info icon-info-grobal">公開設定</p>
     <% end %>
     <% if user_signed_in? %>
-      <li class="favorite-icon-box cursor-pointer" id="favorite-icon-box">
+      <li class="favorite-icon-box cursor-pointer" id="favorite_icon_box_<% post.id %>">
         <%= render "shared_child/favorite_icon", post: post %>
       </li>
       <p class="icon-info icon-info-favorite">お気に入り</p>

@@ -1,1 +1,1 @@
-$('#favorite-icon-box').html("<%= j(render partial: 'shared_child/favorite_icon', locals: { post: @post }) %>");
+$('#favorite_icon_box_<% @post.id %>').html("<%= j(render partial: 'shared_child/favorite_icon', locals: { post: @post }) %>");

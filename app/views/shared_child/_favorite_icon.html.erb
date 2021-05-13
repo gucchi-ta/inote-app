@@ -1,5 +1,5 @@
 <% if post.favorites.where(user_id: current_user.id).exists? %>
-  <%= link_to image_tag("hert-on-icon@2x.png",class: "show-icon",id: "faborite_on_icon"), post_favorites_path(post.id), method: :delete, remote: true %>
+  <%= link_to image_tag("hert-on-icon@2x.png",class: "show-icon",id: "faborite_on_icon"), post_favorites_path(post.id),class: "favorite-icon", method: :delete, remote: true %>
 <% else %>
-  <%= link_to image_tag("hert-off-icon@2x.png",class: "show-icon",id: "faborite_off_icon"), post_favorites_path(post.id), method: :post, remote: true  %>
+  <%= link_to image_tag("hert-off-icon@2x.png",class: "show-icon",id: "faborite_off_icon"), post_favorites_path(post.id),class: "favorite-icon", method: :post, remote: true  %>
 <% end %>

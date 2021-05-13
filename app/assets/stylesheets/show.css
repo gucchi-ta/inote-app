@@ -101,6 +101,9 @@
 .show-icon-box {
   position: absolute;
 }
+.edit-icon-box, .grobal-icon-box, .favorite-icon-box, .delete-icon-box {
+  position: relative;
+}
 .show-icon-list {
   margin-bottom: 0;
 }
@@ -158,10 +161,10 @@ li[data-grobal-check="false"] .grobal-off-icon{
 }
 /* //アイコン情報 */
 
-.edit-icon-box:hover ~ .icon-info-edit,
-.grobal-icon-box:hover ~ .icon-info-grobal,
-.favorite-icon-box:hover ~ .icon-info-favorite,
-.delete-icon-box:hover ~ .icon-info-delete {
+.edit-icon-box:hover .icon-info-edit,
+.grobal-icon-box:hover .icon-info-grobal,
+.favorite-icon-box:hover .icon-info-favorite,
+.delete-icon-box:hover .icon-info-delete {
   opacity: 1;
   transition: 0.5s;
 }

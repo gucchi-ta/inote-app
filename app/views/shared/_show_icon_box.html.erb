@@ -3,8 +3,9 @@
     <% if user_signed_in? && current_user.id == post.user_id %>
       <li class="edit-icon-box">
         <%= link_to image_tag("edit-icon@2x.png",class: "show-icon edit-icon"), edit_post_path(post.id), method: :get %>
+        <p class="icon-info icon-info-edit">編集</p>
       </li>
-      <p class="icon-info icon-info-edit">編集</p>
+      <%# <p class="icon-info icon-info-edit">編集</p> %>
       <li class="grobal-icon-box cursor-pointer" data-grobal-id=<%= post.id %> data-grobal-check=<%= post.grobal %>>
         <% if post.grobal == true %>
           <%= image_tag("grobal-on-icon@2x.png",class: "show-icon grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
@@ -13,20 +14,23 @@
           <%= image_tag("grobal-off-icon@2x.png",class: "show-icon grobal-icon grobal-off-icon", id: "grobal-off-icon") %>
           <%= image_tag("grobal-on-icon@2x.png",class: "show-icon grobal-icon grobal-on-icon", id: "grobal-on-icon") %>
         <% end %>
+        <p class="icon-info icon-info-grobal">公開設定</p>
       </li>
-      <p class="icon-info icon-info-grobal">公開設定</p>
+      <%# <p class="icon-info icon-info-grobal">公開設定</p> %>
     <% end %>
     <% if user_signed_in? %>
       <li class="favorite-icon-box cursor-pointer" id="favorite_icon_box_<% post.id %>">
         <%= render "shared_child/favorite_icon", post: post %>
+        <p class="icon-info icon-info-favorite">お気に入り</p>
       </li>
-      <p class="icon-info icon-info-favorite">お気に入り</p>
+      <%# <p class="icon-info icon-info-favorite">お気に入り</p> %>
     <% end %>
     <% if user_signed_in? && current_user.id == post.user_id %>
       <li class="delete-icon-box">
-        <%= link_to image_tag("delete-icon@2x.png",class: "show-icon delete-icon"), post_path(post.id), method: :delete, data: { confirm: 'このアプリケーション上から画像を削除してもよろしいですか？' }, title: '削除確認' %>
+        <%= link_to image_tag("delete-icon@2x.png",class: "show-icon delete-icon"), post_path(post.id), method: :delete, data: { confirm: 'このアプリケーション上から画像を削除してもよろしいですか？' } %>
+        <p class="icon-info icon-info-delete">削除</p>
       </li>
-      <p class="icon-info icon-info-delete">削除</p>
+      <%# <p class="icon-info icon-info-delete">削除</p> %>
     <% end %>
   </ul>
 </div>

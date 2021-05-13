@@ -26,6 +26,7 @@ class FavoritesController < ApplicationController
     @post = Post.find(params[:post_id])
     favorite = Favorite.find_by(post_id: params[:post_id], user_id: current_user.id)
     favorite.destroy
+    render "create.js.erb"
   end
 
   private

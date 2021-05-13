@@ -1,13 +1,10 @@
 // $(function() {
 // 画像読み込み完了後に実行
 $(window).on('load scroll', function() {
-  // 差し替えダミー画像を先に読み込むためにdelay
-  setTimeout(function(){
+  // // 差し替えダミー画像を先に読み込むためにdelay
+  // setTimeout(function(){
     allFunction();
-  }, 50);
-  // winObject.unbind('resize').resize(function() {
-  //   allFunction();
-  // });
+  // }, 50);
 });
 $(function() {
   $(window).resize(function() {

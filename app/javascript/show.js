@@ -1,22 +1,29 @@
 // アイコン・メモを配置
 // $(function() {
-$(window).on('load scroll', function() {
-  $(".show-img").css('width', 'auto');
-  $(".show-img").css('height', 'auto');
+$(window).on('load', function() {
   // $(".show-memo").css({'visibility': 'hidden'});
   // $(".show-icon-box").css({'visibility': 'hidden'});
-  // 差し替えダミー画像を先に読み込むためにdelay
-  setTimeout(function(){
+  // // 差し替えダミー画像を先に読み込むためにdelay
+  // setTimeout(function(){
     showResize();
-  }, 30);
+  // }, 30);
+});
+$(function() {
   $(window).resize(function() {
-    $(".show-img").css('width', 'auto');
-    $(".show-img").css('height', 'auto');
+    showResize();
+  });
+});
+$(function() {
+  $('.favorite-icon-box').on('click', '.favorite-icon', function(){
     showResize();
   });
 });
 
 function showResize() {
+  // 一度大きさをオリジナルにリセット
+  $(".show-img").css('width', 'auto');
+  $(".show-img").css('height', 'auto');
+
   var showImgWidth = $(".show-img").width();
   var showImgHeight = $(".show-img").height();
   var showBoxWidth = $(".show-box").width();
@@ -129,19 +136,22 @@ function showResize() {
     $(".icon-info-grobal").css({
       'left': '32px',
       'right': 'auto',
-      'top': '31px',
+      // 'top': '31px',
+      'top': '1px',
       'bottom': 'auto'
     });
     $(".icon-info-favorite").css({
       'left': '32px',
       'right': 'auto',
-      'top': '61px',
+      // 'top': '61px',
+      'top': '1px',
       'bottom': 'auto'
     });
     $(".icon-info-delete").css({
       'left': '32px',
       'right': 'auto',
-      'top': '91px',
+      // 'top': '91px',
+      'top': '1px',
       'bottom': 'auto'
     });
   } else if ((windowMargin > showMemoWidth + 28) 
@@ -156,19 +166,22 @@ function showResize() {
     $(".icon-info-grobal").css({
       'left': 'auto',
       'right': '32px',
-      'top': '31px',
+      // 'top': '31px',
+      'top': '1px',
       'bottom': 'auto'
     });
     $(".icon-info-favorite").css({
       'left': 'auto',
       'right': '32px',
-      'top': '61px',
+      // 'top': '61px',
+      'top': '1px',
       'bottom': 'auto'
     });
     $(".icon-info-delete").css({
       'left': 'auto',
       'right': '32px',
-      'top': '91px',
+      // 'top': '91px',
+      'top': '1px',
       'bottom': 'auto'
     });
   } else if (showBoxMarginBottom < 86) {
@@ -179,19 +192,22 @@ function showResize() {
       'bottom': '32px'
     });
     $(".icon-info-grobal").css({
-      'left': '12px',
+      // 'left': '12px',
+      'left': '-14px',
       'right': 'auto',
       'top': 'auto',
       'bottom': '32px'
     });
     $(".icon-info-favorite").css({
-      'left': '43px',
+      // 'left': '43px',
+      'left': '-19px',
       'right': 'auto',
       'top': 'auto',
       'bottom': '32px'
     });
     $(".icon-info-delete").css({
-      'left': '97px',
+      // 'left': '97px',
+      'left': '-1px',
       'right': 'auto',
       'top': 'auto',
       'bottom': '32px'
@@ -204,19 +220,22 @@ function showResize() {
       'bottom': 'auto'
     });
     $(".icon-info-grobal").css({
-      'left': '12px',
+      // 'left': '12px',
+      'left': '-14px',
       'right': 'auto',
       'top': '32px',
       'bottom': 'auto'
     });
     $(".icon-info-favorite").css({
-      'left': '43px',
+      // 'left': '43px',
+      'left': '-19px',
       'right': 'auto',
       'top': '32px',
       'bottom': 'auto'
     });
     $(".icon-info-delete").css({
-      'left': '97px',
+      // 'left': '97px',
+      'left': '-1px',
       'right': 'auto',
       'top': '32px',
       'bottom': 'auto'

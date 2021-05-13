@@ -1,1 +1,24 @@
+// $('#favorite_icon_box_<%# @post.id %>').html("<%#= j(render partial: 'shared_child/favorite_icon', locals: { post: @post }) %>");
+
+
 $('#favorite_icon_box_<% @post.id %>').html("<%= j(render partial: 'shared_child/favorite_icon', locals: { post: @post }) %>");
+// 位置調整
+var showImgWidth = $(".show-img").width();
+var showImgHeight = $(".show-img").height();
+var windowWidth = $(window).width();
+var windowMargin = (windowWidth - showImgWidth) / 2
+var showMemoWidth = $(".show-memo").width();
+var showMemoheight = $(".show-memo").height();
+if ((windowMargin > showMemoWidth + 28) 
+&& (windowMargin > 26 + 28 + windowWidth * 0.01) 
+&& ((showMemoheight < showImgHeight - 144) && (showMemoheight < showImgHeight * 0.45))){
+  $(".show-icon").css({
+    'margin-bottom': '4px',
+    'margin-left': '0'
+  });
+} else {
+  $(".show-icon").css({
+    'margin-bottom': '0',
+    'margin-left': '10px'
+  });
+}

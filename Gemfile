@@ -4,13 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.1.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.5.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5'
+gem 'sass-rails', '~> 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # RSpecを使うため
-  gem 'rspec-rails', '~> 4.0.0'
+  gem 'rspec-rails', '~> 5.0.0'
 
   # FactoryBotを使うため
   gem 'factory_bot_rails'
@@ -75,8 +75,8 @@ gem 'devise'
 #jQuery使うため
 gem 'jquery-rails'
 
-#Font Awesome使うため
-gem 'font-awesome-rails'
+#Font Awesome使うため矢印6.1.４では非対応
+#gem 'font-awesome-rails'
 
 #rubocopを使うため
 gem 'rubocop', require: false
@@ -94,7 +94,4 @@ end
 gem "aws-sdk-s3", require: false
 
 # data-confirmの見た目を改善
-gem 'data-confirm-modal'
-
-#bundle installでエラーが起きる。mimemagic のライセンス問題で突然いくつかのバージョンが Rubygems から削除された対策。
-gem 'mimemagic', '~> 0.4.3'
+#gem 'data-confirm-modal'

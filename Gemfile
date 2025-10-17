@@ -95,3 +95,6 @@ gem "aws-sdk-s3", require: false
 
 # data-confirmの見た目を改善
 gem 'data-confirm-modal'
+
+#bundle installでエラーが起きる。mimemagic のライセンス問題で突然いくつかのバージョンが Rubygems から削除された対策。
+gem 'mimemagic', '~> 0.4.3'

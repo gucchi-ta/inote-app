@@ -93,5 +93,5 @@ end
 # amazon S3を使うため
 gem "aws-sdk-s3", require: false
 
-# data-confirmの見た目を改善
-#gem 'data-confirm-modal'
+# psychというYAML解釈用のGemの4系と3系で解釈が変わっているらしいので対策
+gem 'psych', '~> 3.1'

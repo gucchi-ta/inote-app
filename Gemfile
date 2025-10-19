@@ -83,11 +83,6 @@ gem 'jquery-rails'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
-# Heroku用のGemを導入
-group :production do
-  gem 'rails_12factor'
-end
-
 # amazon S3を使うため
 gem "aws-sdk-s3", require: false
 
@@ -97,3 +92,10 @@ gem 'psych', '~> 3.1'
 gem "jsbundling-rails", "~> 1.3"
 
 gem "cssbundling-rails", "~> 1.4"
+
+gem 'importmap-rails'
+
+# Heroku用のGemを導入
+group :production do
+  gem 'rails_12factor'
+end

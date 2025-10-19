@@ -78,9 +78,6 @@ gem 'jquery-rails'
 #Font Awesome使うため矢印6.1.４では非対応
 #gem 'font-awesome-rails'
 
-#rubocopを使うため
-gem 'rubocop', require: false
-
 # AcriveStorageを使うため
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'

@@ -1,3 +1,5 @@
+require 'logger'
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -12,7 +14,6 @@ gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -92,3 +93,7 @@ gem "aws-sdk-s3", require: false
 
 # psychというYAML解釈用のGemの4系と3系で解釈が変わっているらしいので対策
 gem 'psych', '~> 3.1'
+
+gem "jsbundling-rails", "~> 1.3"
+
+gem "cssbundling-rails", "~> 1.4"

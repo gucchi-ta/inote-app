@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :show_redirect, only: [:show, :show_favorite, :show_everyone]
   def index
     @posts = Post.where('user_id LIKE ?', current_user.id.to_s).order('created_at DESC') if user_signed_in?
-    @everyone_posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
+    @everyone_posts = Post.where(grobal: true).order('created_at DESC')
   end
 
   def favorite
@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def everyone
-    @posts = Post.where('grobal LIKE ?', '1').order('created_at DESC')
+    @posts = Post.where(grobal: true).order('created_at DESC')
   end
 
   def show
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     unless @favorite.present?
       if Post.where('user_id LIKE ?', current_user.id.to_s).where('id LIKE ?', params[:id]).present?
         redirect_to post_path(params[:id])
-      elsif Post.where('id LIKE ?', params[:id]).where('grobal LIKE ?', '1').present?
+      elsif Post.where('id LIKE ?', params[:id]).where(grobal: true).present?
         redirect_to show_everyone_post_path(params[:id])
       else
         redirect_to root_path

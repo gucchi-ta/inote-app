@@ -1,4 +1,6 @@
 require_relative 'boot'
+require "logger"
+require "active_support/logger"
 
 require 'logger'
 require 'rails/all'
